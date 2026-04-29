@@ -35,3 +35,57 @@
 .navbar-link-text.navbarLinkTextActive {
   color: white;
 }
+
+/* Mobile Links */
+.mobile-menu-link-pill {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.125rem 2rem;
+  text-decoration: none;
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.mobile-menu-link-pill:active {
+  transform: scale(0.97);
+  background: rgba(0, 102, 255, 0.1);
+  border-color: rgba(0, 102, 255, 0.2);
+}
+
+.mobile-menu-link-pill.active {
+  background: rgba(0, 102, 255, 0.12);
+  border-color: rgba(0, 102, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 102, 255, 0.15);
+}
+
+.link-text-minimal {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  transition: all 0.4s;
+  position: relative;
+  z-index: 2;
+}
+
+.mobile-menu-link-pill.active .link-text-minimal {
+  color: #fff;
+}
+
+.link-active-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 102, 255, 0.25) 0%,
+    transparent 85%
+  );
+  pointer-events: none;
+}

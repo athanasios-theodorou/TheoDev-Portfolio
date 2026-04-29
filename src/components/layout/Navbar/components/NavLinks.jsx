@@ -2,7 +2,13 @@ import { navLinks } from "../../../../assets/data/portfolio";
 
 import classes from "./NavLinks.module.css";
 
-export const NavLinks = ({ activeSection, onNavigate }) => {
+export const NavLinks = ({
+  variant = "desktop",
+  activeSection,
+  onNavigate,
+}) => {
+  const isMobile = variant === "mobile";
+
   return (
     <>
       {navLinks.map((link) => {
@@ -17,15 +23,22 @@ export const NavLinks = ({ activeSection, onNavigate }) => {
               e.preventDefault();
               onNavigate(link.href);
             }}
-            className={classes["navbar-link"]}
+            className={`${isMobile ? classes["mobile-menu-link-pill"] : classes["navbar-link"]} 
+            ${isActive ? classes.active : ""}`}
           >
-            {isActive && <div className={classes["navbar-link-active-bg"]} />}
+            {!isMobile && isActive && (
+              <div className={classes["navbar-link-active-bg"]} />
+            )}
             <span
-              className={`${classes["navbar-link-text"]} 
-              ${isActive ? classes["navbarLinkTextActive"] : ""}`}
+              className={`${isMobile ? classes["link-text-minimal"] : classes["navbar-link-text"]} 
+              ${isActive ? classes.active : ""}`}
             >
               {link.label}
             </span>
+
+            {isMobile && isActive && (
+              <div className={classes["link-active-glow"]} />
+            )}
           </a>
         );
       })}

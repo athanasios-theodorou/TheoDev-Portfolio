@@ -40,11 +40,16 @@ export const Navbar = () => {
           className={`${classes["navbar-container"]} ${scrolled ? classes.scrolled : ""}`}
         >
           <Logo onNavigate={handleNav} />
+
           <nav className={classes["navbar-desktop-nav"]}>
-            <NavLinks activeSection={activeSection} onNavigate={handleNav} />
+            <NavLinks
+              variant="desktop"
+              activeSection={activeSection}
+              onNavigate={handleNav}
+            />
           </nav>
-          {/* <NavbarActions />
-          <MobileMenuToggle /> */}
+
+          {/* <NavbarActions /> */}
         </div>
       </header>
     </>
