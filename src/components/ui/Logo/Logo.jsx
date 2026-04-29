@@ -1,8 +1,15 @@
 import classes from "./Logo.module.css";
 
-export const Logo = () => {
+export const Logo = ({ onNavigate }) => {
   return (
-    <a className={classes["navbar-logo"]}>
+    <a
+      href="#home"
+      className={classes["navbar-logo"]}
+      onClick={(e) => {
+        e.preventDefault();
+        onNavigate("#home");
+      }}
+    >
       <div className={classes["navbar-logo-icon"]}>
         <img
           src="/images/LogoTheoDev.png"
