@@ -1,18 +1,14 @@
-import { useState } from "react";
-
 import { Sun, Moon, Menu, X } from "lucide-react";
 import { personal } from "../../../../assets/data/portfolio";
+
 import classes from "./NavbarActions.module.css";
 
-export const NavbarActions = ({ menuOpen, onToggleMenu }) => {
-  const [theme, setTheme] = useState("dark"); // Default Dark
-
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
-  };
-
+export const NavbarActions = ({
+  menuOpen,
+  onToggleMenu,
+  theme,
+  toggleTheme,
+}) => {
   return (
     <div className={classes["navbar-actions"]}>
       {/* Theme Switcher */}

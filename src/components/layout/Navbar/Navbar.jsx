@@ -9,9 +9,16 @@ import classes from "./Navbar.module.css";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState("dark");
   const [scrolled, setScrolled] = useState(false);
 
   const activeSection = useActiveSection(["home", "about", "work", "contact"]);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+  };
 
   const handleNav = (href) => {
     setMenuOpen(false);
@@ -61,6 +68,8 @@ export const Navbar = () => {
           <NavbarActions
             menuOpen={menuOpen}
             onToggleMenu={() => setMenuOpen((prev) => !prev)}
+            theme={theme}
+            toggleTheme={toggleTheme}
           />
         </div>
       </header>
