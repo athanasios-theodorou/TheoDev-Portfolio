@@ -8,11 +8,13 @@ import { NavbarActions } from "./components/NavbarActions";
 import classes from "./Navbar.module.css";
 
 export const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const activeSection = useActiveSection(["home", "about", "work", "contact"]);
 
   const handleNav = (href) => {
+    setMenuOpen(false);
     const targetSection = document.querySelector(href);
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: "smooth" });
@@ -34,6 +36,12 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // lock body scroll on mobile menu
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "unset";
+    return () => (document.body.style.overflow = "unset");
+  }, [menuOpen]);
+
   return (
     <>
       <header className={classes["navbar-header"]}>
@@ -50,7 +58,10 @@ export const Navbar = () => {
             />
           </nav>
 
-          <NavbarActions />
+          <NavbarActions
+            menuOpen={menuOpen}
+            onToggleMenu={() => setMenuOpen((prev) => !prev)}
+          />
         </div>
       </header>
     </>

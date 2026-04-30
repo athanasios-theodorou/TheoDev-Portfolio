@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Menu, X } from "lucide-react";
 import { personal } from "../../../../assets/data/portfolio";
 import classes from "./NavbarActions.module.css";
 
-export const NavbarActions = () => {
+export const NavbarActions = ({ menuOpen, onToggleMenu }) => {
   const [theme, setTheme] = useState("dark"); // Default Dark
 
   const toggleTheme = () => {
@@ -41,6 +41,22 @@ export const NavbarActions = () => {
         <span className={classes["navbar-cta-dot"]} />
         <span className={classes["navbar-cta-text"]}>Available</span>
       </a>
+
+      {/* Hamburger Toggle */}
+      <button
+        className={classes["navbar-mobile-toggle"]}
+        onClick={onToggleMenu}
+      >
+        {menuOpen ? (
+          <div>
+            <X size={20} color="var(--text-primary)" />
+          </div>
+        ) : (
+          <div>
+            <Menu size={20} color="var(--text-primary)" />
+          </div>
+        )}
+      </button>
     </div>
   );
 };
