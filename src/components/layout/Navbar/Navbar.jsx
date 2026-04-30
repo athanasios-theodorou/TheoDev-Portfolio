@@ -3,6 +3,7 @@ import { useActiveSection } from "../../../hooks/useActiveSection";
 
 import { Logo } from "../../ui/Logo/Logo";
 import { NavLinks } from "./components/NavLinks";
+import { NavbarActions } from "./components/NavbarActions";
 
 import classes from "./Navbar.module.css";
 
@@ -49,7 +50,7 @@ export const Navbar = () => {
             />
           </nav>
 
-          {/* <NavbarActions /> */}
+          <NavbarActions />
         </div>
       </header>
     </>
