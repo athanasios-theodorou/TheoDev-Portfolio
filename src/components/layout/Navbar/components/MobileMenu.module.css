@@ -153,6 +153,13 @@
   border-color: var(--hub-btn-hire-border);
 }
 
+.glow-box-primary {
+  box-shadow:
+    0 0 20px var(--pill-active-border),
+    0 0 60px var(--menu-glow-inner),
+    inset 0 1px 0 var(--menu-back-border);
+}
+
 .sparkle-primary {
   color: var(--accent);
   filter: drop-shadow(0 0 5px var(--accent));
@@ -180,10 +187,10 @@
 
 @keyframes shimmer {
   0% {
-    transform: translateX(150%);
+    background-position: -200% 0;
   }
   100% {
-    transform: translateX(-150%);
+    background-position: 200% 0;
   }
 }
 

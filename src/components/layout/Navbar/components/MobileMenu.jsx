@@ -40,7 +40,7 @@ export const MobileMenu = ({
           <div className={classes["mobile-actions-hub-vertical"]}>
             <button
               onClick={toggleTheme}
-              className={classes["hub-action-btn-theme-full"]}
+              className={`${classes["hub-action-btn-theme-full"]} ${classes["glow-box-primary"]}`}
             >
               {theme === "dark" ? (
                 <Sun className={classes["sparkle-primary"]} size={16} />
