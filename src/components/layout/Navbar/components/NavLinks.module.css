@@ -89,3 +89,9 @@
   );
   pointer-events: none;
 }
+
+@media (max-height: 720px) {
+  .mobile-menu-link-pill {
+    padding: 0.9rem 2rem;
+  }
+}
