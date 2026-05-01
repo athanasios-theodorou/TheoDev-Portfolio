@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #010208;
+  background-color: var(--menu-overlay-bg);
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -16,7 +16,7 @@
   position: absolute;
   inset: 0;
   backdrop-filter: blur(60px);
-  background: rgba(1, 2, 8, 0.9);
+  background: var(--menu-glass-bg);
   z-index: -1;
 }
 
@@ -29,7 +29,7 @@
   height: 100%;
   background: radial-gradient(
     circle,
-    rgba(0, 102, 255, 0.12) 0%,
+    var(--menu-glow-inner) 0%,
     transparent 70%
   );
   filter: blur(120px);
@@ -93,10 +93,10 @@
   justify-content: center;
   gap: 0.75rem;
   padding: 0.75rem 1.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--menu-back-bg);
+  border: 1px solid var(--menu-back-border);
   border-radius: 99px;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--menu-back-text);
   font-family: var(--font-mono);
   font-size: 0.65rem;
   text-transform: uppercase;
@@ -106,9 +106,9 @@
 }
 
 .mobile-menu-back-btn:active {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+  background: var(--action-btn-hover);
+  border-color: var(--border);
   transform: scale(0.95);
 }
 
@@ -131,10 +131,10 @@
 .hub-action-btn-hire-full {
   width: 100%;
   padding: 1.125rem;
-  background: rgba(0, 102, 255, 0.08);
-  border: 1px solid rgba(0, 102, 255, 0.2);
+  background: var(--hub-btn-theme-bg);
+  border: 1px solid var(--hub-btn-theme-border);
   border-radius: 12px;
-  color: #fff;
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,8 +149,8 @@
 }
 
 .hub-action-btn-hire-full {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.08);
+  background: var(--glass-bg-light);
+  border-color: var(--hub-btn-hire-border);
 }
 
 .sparkle-primary {
@@ -189,12 +189,12 @@
 
 .hub-action-btn-theme-full:active {
   transform: scale(0.97);
-  background: rgba(0, 102, 255, 0.15);
+  background: var(--primary-dim);
 }
 
 .hub-action-btn-hire-full:active {
   transform: scale(0.97);
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--action-btn-hover);
 }
 
 @media (max-height: 720px) {

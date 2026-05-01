@@ -4,7 +4,6 @@
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 600;
-  /* Elegant Semi-bold */
   transition: all 0.3s ease;
   text-decoration: none;
 }
@@ -13,27 +12,24 @@
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  background-color: rgba(59, 130, 246, 0.1);
-  /* blue-500/10 */
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  /* blue-500/20 */
-  box-shadow: inset 0 0 12px rgba(0, 102, 255, 0.2);
+  background-color: var(--nav-active-bg);
+  border: 1px solid var(--nav-active-border);
+  box-shadow: inset 0 0 12px var(--nav-active-shadow);
 }
 
 .navbar-link-text {
   position: relative;
   z-index: 10;
-  color: rgba(219, 234, 254, 0.5);
-  /* blue-100/50 */
+  color: var(--nav-link-color); /* Εδώ μπήκε το σκούρο γκρι */
   transition: color 0.3s ease;
 }
 
 .navbar-link:hover .navbar-link-text {
-  color: white;
+  color: var(--nav-link-hover);
 }
 
 .navbar-link-text.active {
-  color: white;
+  color: var(--nav-link-hover);
 }
 
 /* Mobile Links */
@@ -45,8 +41,8 @@
   padding: 1.125rem 2rem;
   text-decoration: none;
   position: relative;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg-tiny);
+  border: 1px solid var(--pill-border);
   border-radius: 14px;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
@@ -54,14 +50,15 @@
 
 .mobile-menu-link-pill:active {
   transform: scale(0.97);
-  background: rgba(0, 102, 255, 0.1);
-  border-color: rgba(0, 102, 255, 0.2);
+  background: var(
+    --primary-dim
+  ); /* Χρησιμοποιούμε το ήδη υπάρχον variable σου */
 }
 
 .mobile-menu-link-pill.active {
-  background: rgba(0, 102, 255, 0.12);
-  border-color: rgba(0, 102, 255, 0.3);
-  box-shadow: 0 0 25px rgba(0, 102, 255, 0.15);
+  background: var(--pill-active-bg);
+  border-color: var(--pill-active-border);
+  box-shadow: 0 0 25px var(--pill-active-shadow);
 }
 
 .link-text-minimal {
@@ -69,14 +66,14 @@
   font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--nav-link-color); /* Ίδιο σκούρο χρώμα με το desktop */
   transition: all 0.4s;
   position: relative;
   z-index: 2;
 }
 
 .mobile-menu-link-pill.active .link-text-minimal {
-  color: #fff;
+  color: var(--nav-link-hover);
 }
 
 .link-active-glow {
@@ -84,8 +81,8 @@
   inset: 0;
   background: radial-gradient(
     circle at center,
-    rgba(0, 102, 255, 0.25) 0%,
-    transparent 85%
+    var(--accent-dim) 0%,
+    /* Χρησιμοποιούμε το ήδη υπάρχον variable σου */ transparent 85%
   );
   pointer-events: none;
 }
