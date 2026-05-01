@@ -4,6 +4,7 @@ import { useActiveSection } from "../../../hooks/useActiveSection";
 import { Logo } from "../../ui/Logo/Logo";
 import { NavLinks } from "./components/NavLinks";
 import { NavbarActions } from "./components/NavbarActions";
+import { MobileMenu } from "./components/MobileMenu";
 
 import classes from "./Navbar.module.css";
 
@@ -73,6 +74,15 @@ export const Navbar = () => {
           />
         </div>
       </header>
+      {menuOpen && (
+        <MobileMenu
+          activeSection={activeSection}
+          handleNav={handleNav}
+          handleReturn={() => setMenuOpen(false)}
+          theme={theme}
+          toggleTheme={toggleTheme}
+        />
+      )}
     </>
   );
 };
