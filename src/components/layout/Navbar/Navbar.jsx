@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useActiveSection } from "../../../hooks/useActiveSection";
 
 import { Logo } from "../../ui/Logo/Logo";
@@ -53,7 +53,12 @@ export const Navbar = () => {
 
   return (
     <>
-      <header className={classes["navbar-header"]}>
+      <motion.header
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+        className={classes["navbar-header"]}
+      >
         <div
           className={`${classes["navbar-container"]} ${scrolled ? classes.scrolled : ""}`}
         >
@@ -74,7 +79,7 @@ export const Navbar = () => {
             toggleTheme={toggleTheme}
           />
         </div>
-      </header>
+      </motion.header>
       <AnimatePresence>
         {menuOpen && (
           <MobileMenu
