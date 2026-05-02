@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 import { useActiveSection } from "../../../hooks/useActiveSection";
 
 import { Logo } from "../../ui/Logo/Logo";
@@ -74,15 +75,18 @@ export const Navbar = () => {
           />
         </div>
       </header>
-      {menuOpen && (
-        <MobileMenu
-          activeSection={activeSection}
-          handleNav={handleNav}
-          handleReturn={() => setMenuOpen(false)}
-          theme={theme}
-          toggleTheme={toggleTheme}
-        />
-      )}
+      <AnimatePresence>
+        {menuOpen && (
+          <MobileMenu
+            key="mobile-menu"
+            activeSection={activeSection}
+            handleNav={handleNav}
+            handleReturn={() => setMenuOpen(false)}
+            theme={theme}
+            toggleTheme={toggleTheme}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 };
