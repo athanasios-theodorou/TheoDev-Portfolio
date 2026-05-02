@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Sun, Moon, ArrowLeft } from "lucide-react";
 import { NavLinks } from "./NavLinks";
 import { personal } from "../../../../assets/data/portfolio";
@@ -12,32 +13,58 @@ export const MobileMenu = ({
   toggleTheme,
 }) => {
   return (
-    <div className={classes["mobile-menu-overlay"]}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{
+        y: 20,
+        opacity: 0,
+        transition: {
+          duration: 0.3,
+          ease: "easeIn",
+        },
+      }}
+      className={classes["mobile-menu-overlay"]}
+    >
       <div className={classes["mobile-menu-glass"]} />
       <div className={classes["mobile-menu-bg-glow-center"]} />
       <div className={classes["mobile-menu-content-centered"]}>
-        <div className={classes["mobile-menu-header-centered"]}>
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.8 }}
+          className={classes["mobile-menu-header-centered"]}
+        >
           <span className={classes["mobile-menu-label-architect"]}>
             NAVIGATION
           </span>
           <div className={classes["label-dots"]} />
-        </div>
+        </motion.div>
         <nav className={classes["mobile-menu-nav-centered"]}>
           <NavLinks
             variant="mobile"
             activeSection={activeSection}
             onNavigate={handleNav}
           />
-          <button
+          <motion.button
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 10, opacity: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
             onClick={handleReturn}
             className={classes["mobile-menu-back-btn"]}
           >
             <ArrowLeft size={16} /> <span>Back to Site</span>
-          </button>
+          </motion.button>
         </nav>
 
         <div className={classes["mobile-menu-footer-hub"]}>
-          <div className={classes["mobile-actions-hub-vertical"]}>
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className={classes["mobile-actions-hub-vertical"]}
+          >
             <button
               onClick={toggleTheme}
               className={`${classes["hub-action-btn-theme-full"]} ${classes["glow-box-primary"]}`}
@@ -56,9 +83,9 @@ export const MobileMenu = ({
             >
               <span>Available for Projects</span>
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
