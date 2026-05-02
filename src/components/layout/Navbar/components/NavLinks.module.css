@@ -20,7 +20,7 @@
 .navbar-link-text {
   position: relative;
   z-index: 10;
-  color: var(--nav-link-color); /* Εδώ μπήκε το σκούρο γκρι */
+  color: var(--nav-link-color);
   transition: color 0.3s ease;
 }
 
@@ -50,9 +50,7 @@
 
 .mobile-menu-link-pill:active {
   transform: scale(0.97);
-  background: var(
-    --primary-dim
-  ); /* Χρησιμοποιούμε το ήδη υπάρχον variable σου */
+  background: var(--primary-dim);
 }
 
 .mobile-menu-link-pill.active {
@@ -66,7 +64,7 @@
   font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--nav-link-color); /* Ίδιο σκούρο χρώμα με το desktop */
+  color: var(--nav-link-color);
   transition: all 0.4s;
   position: relative;
   z-index: 2;
@@ -82,7 +80,7 @@
   background: radial-gradient(
     circle at center,
     var(--accent-dim) 0%,
-    /* Χρησιμοποιούμε το ήδη υπάρχον variable σου */ transparent 85%
+    transparent 85%
   );
   pointer-events: none;
 }

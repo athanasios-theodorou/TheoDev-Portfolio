@@ -48,7 +48,7 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--text-primary); /* Αλλαγή από white σε variable */
+  color: var(--text-primary);
   white-space: nowrap;
   pointer-events: none;
 }
