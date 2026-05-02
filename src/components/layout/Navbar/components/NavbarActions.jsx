@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon, Menu, X } from "lucide-react";
 import { personal } from "../../../../assets/data/portfolio";
 
@@ -12,13 +13,24 @@ export const NavbarActions = ({
   return (
     <div className={classes["navbar-actions"]}>
       {/* Theme Switcher */}
-      <div className={classes["navbar-theme-wrapper"]}>
-        <span className={classes["theme-btn-text"]}>
+      <motion.div
+        initial="initial"
+        whileHover="hover"
+        className={classes["navbar-theme-wrapper"]}
+      >
+        <motion.span
+          variants={{
+            initial: { x: 10, opacity: 0 },
+            hover: { x: 0, opacity: 1 },
+          }}
+          className={classes["theme-btn-text"]}
+        >
           {theme === "dark" ? "Light Mode" : "Dark Mode"}
-        </span>
+        </motion.span>
 
-        <button
+        <motion.button
           onClick={toggleTheme}
+          whileTap={{ scale: 0.9 }}
           className={classes["navbar-theme-icon-btn"]}
           aria-label="Toggle Theme"
         >
@@ -28,30 +40,46 @@ export const NavbarActions = ({
             <Moon size={18} className={classes["theme-sparkle-icon"]} />
           )}
           <div className={classes["theme-icon-glow"]} />
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
 
       {/* CTA Button */}
-      <a href={`mailto:${personal.email}`} className={classes["navbar-cta"]}>
+      <motion.a
+        href={`mailto:${personal.email}`}
+        whileHover={{ scale: 1.05 }}
+        className={classes["navbar-cta"]}
+      >
         <div className={classes["navbar-cta-shine"]} />
         <span className={classes["navbar-cta-dot"]} />
         <span className={classes["navbar-cta-text"]}>Available</span>
-      </a>
+      </motion.a>
 
       {/* Hamburger Toggle */}
       <button
         className={classes["navbar-mobile-toggle"]}
         onClick={onToggleMenu}
       >
-        {menuOpen ? (
-          <div>
-            <X size={20} color="var(--text-primary)" />
-          </div>
-        ) : (
-          <div>
-            <Menu size={20} color="var(--text-primary)" />
-          </div>
-        )}
+        <AnimatePresence mode="wait">
+          {menuOpen ? (
+            <motion.div
+              key="x"
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: 90, opacity: 0 }}
+            >
+              <X size={20} color="var(--text-primary)" />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="menu"
+              initial={{ rotate: 90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: -90, opacity: 0 }}
+            >
+              <Menu size={20} color="var(--text-primary)" />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </button>
     </div>
   );
