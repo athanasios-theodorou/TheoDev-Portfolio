@@ -1,0 +1,104 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ROOT LAYOUT */
+html {
+  scroll-padding-top: 80px;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* HEADINGS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 2.75rem;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 2.25rem;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.75rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+/* TEXT */
+p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* LISTS */
+ul,
+ol {
+  list-style: none;
+}
+
+/* BUTTON RESET */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* SELECTION */
+::selection {
+  background: rgba(0, 102, 255, 0.35);
+  color: var(--text-primary);
+}
