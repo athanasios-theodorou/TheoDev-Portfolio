@@ -23,6 +23,7 @@ export const NavbarActions = ({
             initial: { x: 10, opacity: 0 },
             hover: { x: 0, opacity: 1 },
           }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className={classes["theme-btn-text"]}
         >
           {theme === "dark" ? "Light Mode" : "Dark Mode"}
@@ -47,6 +48,7 @@ export const NavbarActions = ({
       <motion.a
         href={`mailto:${personal.email}`}
         whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
         className={classes["navbar-cta"]}
       >
         <div className={classes["navbar-cta-shine"]} />
@@ -75,6 +77,7 @@ export const NavbarActions = ({
               initial={{ rotate: 90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
+              transition={{ duration: 0.2 }}
             >
               <Menu size={20} color="var(--text-primary)" />
             </motion.div>
