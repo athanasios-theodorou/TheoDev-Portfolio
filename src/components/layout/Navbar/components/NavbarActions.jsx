@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Sun, Moon, Menu } from "lucide-react";
 import { personal } from "../../../../assets/data/portfolio";
 
 import classes from "./NavbarActions.module.css";
@@ -62,26 +62,15 @@ export const NavbarActions = ({
         onClick={onToggleMenu}
       >
         <AnimatePresence mode="wait">
-          {menuOpen ? (
-            <motion.div
-              key="x"
-              initial={{ rotate: -90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: 90, opacity: 0 }}
-            >
-              <X size={20} color="var(--text-primary)" />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="menu"
-              initial={{ rotate: 90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: -90, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Menu size={20} color="var(--text-primary)" />
-            </motion.div>
-          )}
+          <motion.div
+            key={menuOpen ? "open" : "closed"}
+            initial={{ rotate: 90, opacity: 0 }}
+            animate={{ rotate: 0, opacity: 1 }}
+            exit={{ rotate: -90, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Menu size={20} color="var(--text-primary)" />
+          </motion.div>
         </AnimatePresence>
       </button>
     </div>
