@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { navLinks } from "../../../../assets/data/portfolio";
-
+import { staggerReveal } from "../../../../utils/animations";
 import classes from "./NavLinks.module.css";
 
 export const NavLinks = ({
@@ -9,19 +9,6 @@ export const NavLinks = ({
   onNavigate,
 }) => {
   const isMobile = variant === "mobile";
-
-  const mobileLinkVariants = {
-    initial: { y: 20, opacity: 0 },
-    animate: (index) => ({
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: 0.1 + index * 0.08,
-        duration: 0.6,
-        ease: [0.16, 1, 0.3, 1],
-      },
-    }),
-  };
 
   return (
     <>
@@ -42,7 +29,7 @@ export const NavLinks = ({
             initial={isMobile ? "initial" : false}
             animate={isMobile ? "animate" : false}
             custom={index}
-            variants={mobileLinkVariants}
+            variants={staggerReveal}
           >
             {!isMobile && isActive && (
               <motion.div
