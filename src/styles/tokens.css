@@ -4,79 +4,61 @@
   --font-body: "DM Sans", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  /* ── 2. THEME COLORS ───────────────────────────────────── */
+  /* ── 2. BRAND COLORS ─────────────────────────────────── */
   --primary: #0066ff;
   --primary-light: #3b8bff;
   --primary-dark: #0047cc;
-  --primary-dim: rgba(0, 102, 255, 0.15);
 
   --accent: #00d4ff;
-  --accent-dim: rgba(0, 212, 255, 0.12);
   --accent-warm: #0ea5e9;
 
   /* ── 3. BACKGROUNDS & SURFACES ───────────────────────── */
-  --bg-base: #020510;
-  --bg-surface: #040b1a;
-  --bg-card: rgba(0, 102, 255, 0.04);
-  --menu-overlay-bg: #010208;
+  --bg-base: #020510; /* Main page background */
+  --bg-surface: #040b1a; /* Secondary sections/containers */
+  --bg-elevated: rgba(0, 102, 255, 0.04); /* Cards or subtle elevation */
+  --bg-overlay: #010208; /* Modals, full-screen menus, or backdrops */
 
   /* ── 4. TYPOGRAPHY ───────────────────────────────────── */
-  --text-primary: #eef4ff;
-  --text-muted: rgba(220, 235, 255, 0.75);
-  --text-dim: rgba(130, 170, 255, 0.45);
+  --text-main: #eef4ff; /* Primary text color */
+  --text-muted: rgba(220, 235, 255, 0.75); /* Secondary/subtle text */
+  --text-dim: rgba(130, 170, 255, 0.45); /* Very subtle or placeholder text */
+  --text-disabled: rgba(255, 255, 255, 0.4); /* Disabled states or back label */
 
-  /* ── 5. SHARED GLASS & BORDERS ───────────────────────── */
-  --border-subtle: rgba(255, 255, 255, 0.05);
-  --border-active: rgba(0, 102, 255, 0.2);
+  /* Interactive Text */
+  --text-interactive: rgba(219, 234, 254, 0.5); /* Navigation links or labels */
+  --text-interactive-hover: #ffffff; /* Hover state for links */
 
-  --glass-bg-tiny: rgba(255, 255, 255, 0.02);
-  --glass-bg-light: rgba(255, 255, 255, 0.03);
+  /* ── 5. BORDERS ──────────────────────────────────────── */
+  --border-subtle: rgba(255, 255, 255, 0.05); /* Very light lines */
+  --border-muted: rgba(255, 255, 255, 0.08); /* Standard separator lines */
 
-  /* ── 6. NAVBAR & NAVIGATION ─────────────────────────── */
-  --nav-bg-scrolled: rgba(2, 5, 16, 0.7);
-  --nav-shadow: 0 8px 32px rgba(0, 102, 255, 0.1);
-  --nav-link-color: rgba(219, 234, 254, 0.5);
-  --nav-link-hover: #ffffff;
+  /* Primary Theme Borders */
+  --border-primary-subtle: rgba(0, 102, 255, 0.2); /* Soft blue border */
+  --border-primary-strong: rgba(0, 102, 255, 0.3); /* Defined blue border */
 
-  /* Active States */
-  --nav-active-bg: rgba(59, 130, 246, 0.1);
-  --nav-active-border: rgba(59, 130, 246, 0.2);
-  --nav-active-shadow: rgba(0, 102, 255, 0.2);
+  /* ── 6. INTERACTIVE & ACTION (Buttons, Hover States) ─── */
+  --action-bg-subtle: rgba(0, 102, 255, 0.05); /* Default button/action bg */
+  --action-bg-base: rgba(0, 102, 255, 0.08); /* Standard interactive bg */
+  --action-bg-hover: rgba(0, 102, 255, 0.1); /* Hover state background */
+  --action-bg-active: rgba(0, 102, 255, 0.12); /* Active/pressed state bg */
 
-  /* Mobile Menu Specific */
-  --pill-border: rgba(255, 255, 255, 0.05);
-  --pill-active-bg: rgba(0, 102, 255, 0.12);
-  --pill-active-border: rgba(0, 102, 255, 0.3);
-  --pill-active-shadow: rgba(0, 102, 255, 0.15);
-  --menu-glass-bg: rgba(1, 2, 8, 0.9);
-  --menu-glow-inner: rgba(0, 102, 255, 0.12);
+  /* Accent Hightlights */
+  --accent-bg-subtle: rgba(0, 212, 255, 0.12); /* Cyan highlight for accents */
 
-  /* Mobile Toggle */
-  --toggle-border: rgba(255, 255, 255, 0.05);
+  /* ── 7. GLASS EFFECTS ────────────────────────────────── */
+  --glass-light: rgba(255, 255, 255, 0.02); /* Barely visible frosted effect */
+  --glass-medium: rgba(255, 255, 255, 0.03); /* Soft frosted surface */
+  --glass-heavy: rgba(2, 5, 16, 0.7); /* Dark frosted effect for Navbars */
+  --glass-solid: rgba(1, 2, 8, 0.9); /* Almost opaque frosted surface */
 
-  /* Back Button */
-  --menu-back-border: rgba(255, 255, 255, 0.08);
-  --menu-back-text: rgba(255, 255, 255, 0.4);
+  /* ── 8. SHADOWS & GLOWS ──────────────────────────────── */
+  --shadow-sm: rgba(0, 102, 255, 0.15); /* Soft blue outer shadow */
+  --shadow-md: rgba(0, 102, 255, 0.2); /* Medium blue glow */
+  --shadow-lg: 0 8px 32px rgba(0, 102, 255, 0.1); /* Large ambient shadow */
 
-  /* ── 7. INTERACTIVE ELEMENTS ────────────────────────── */
+  --glow-inner: rgba(0, 102, 255, 0.12); /* Inner shine effect */
 
-  /* Theme Switcher */
-  --theme-btn-bg: rgba(0, 102, 255, 0.05);
-  --theme-btn-border: var(--border-active);
-  --theme-btn-hover-bg: rgba(0, 102, 255, 0.1);
-
-  /* CTA Button (Available) */
-  --cta-bg: rgba(0, 102, 255, 0.06);
-  --cta-border: rgba(0, 102, 255, 0.25);
-  --cta-text: rgba(238, 244, 255, 0.9);
-  --cta-shine: rgba(59, 130, 246, 0.1);
-
-  /* Hub Action Buttons */
-  --hub-btn-theme-bg: rgba(0, 102, 255, 0.08);
-  --hub-btn-theme-border: rgba(0, 102, 255, 0.2);
-  --hub-btn-hire-border: rgba(255, 255, 255, 0.08);
-
-  /* Status Colors */
-  --status-online: #34d399;
-  --status-online-glow: rgba(52, 211, 153, 0.8);
+  /* ── 9. STATUS ───────────────────────────────────────── */
+  --status-success: #34d399; /* Green for online/success states */
+  --status-success-glow: rgba(52, 211, 153, 0.8);
 }

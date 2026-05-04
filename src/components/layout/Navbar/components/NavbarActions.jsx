@@ -69,7 +69,7 @@ export const NavbarActions = ({
             exit={{ rotate: -90, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <Menu size={20} color="var(--text-primary)" />
+            <Menu size={20} color="var(--text-main)" />
           </motion.div>
         </AnimatePresence>
       </button>

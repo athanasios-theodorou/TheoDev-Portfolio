@@ -46,9 +46,9 @@
 .navbar-container.scrolled {
   padding: 0.625rem 1rem;
   backdrop-filter: blur(24px);
-  background-color: var(--nav-bg-scrolled);
+  background-color: var(--glass-heavy);
   border: 1px solid var(--border);
-  box-shadow: var(--nav-shadow);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Desktop Nav */
@@ -63,7 +63,7 @@
     gap: 0.375rem;
     padding: 0.25rem;
     border-radius: 9999px;
-    background-color: var(--glass-bg-tiny);
+    background-color: var(--glass-light);
     border: 1px solid var(--border-subtle);
   }
 }

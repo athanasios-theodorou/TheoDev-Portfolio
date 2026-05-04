@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--menu-overlay-bg);
+  background-color: var(--bg-overlay);
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -16,7 +16,7 @@
   position: absolute;
   inset: 0;
   backdrop-filter: blur(60px);
-  background: var(--menu-glass-bg);
+  background: var(--glass-solid);
   z-index: -1;
 }
 
@@ -27,11 +27,7 @@
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle,
-    var(--menu-glow-inner) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle, var(--glow-inner) 0%, transparent 70%);
   filter: blur(120px);
   z-index: -1;
 }
@@ -94,9 +90,9 @@
   gap: 0.75rem;
   padding: 0.75rem 1.5rem;
   background: var(--menu-back-bg);
-  border: 1px solid var(--menu-back-border);
+  border: 1px solid var(--border-muted);
   border-radius: 99px;
-  color: var(--menu-back-text);
+  color: var(--text-disabled);
   font-family: var(--font-mono);
   font-size: 0.65rem;
   text-transform: uppercase;
@@ -106,7 +102,7 @@
 }
 
 .mobile-menu-back-btn:active {
-  color: var(--text-primary);
+  color: var(--text-main);
   background: var(--action-btn-hover);
   border-color: var(--border);
   transform: scale(0.95);
@@ -131,10 +127,10 @@
 .hub-action-btn-hire-full {
   width: 100%;
   padding: 1.125rem;
-  background: var(--hub-btn-theme-bg);
-  border: 1px solid var(--hub-btn-theme-border);
+  background: var(--action-bg-base);
+  border: 1px solid var(--border-primary-subtle);
   border-radius: 12px;
-  color: var(--text-primary);
+  color: var(--text-main);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,15 +145,15 @@
 }
 
 .hub-action-btn-hire-full {
-  background: var(--glass-bg-light);
-  border-color: var(--hub-btn-hire-border);
+  background: var(--glass-medium);
+  border-color: var(--border-muted);
 }
 
 .glow-box-primary {
   box-shadow:
-    0 0 20px var(--pill-active-border),
-    0 0 60px var(--menu-glow-inner),
-    inset 0 1px 0 var(--menu-back-border);
+    0 0 20px var(--border-primary-strong),
+    0 0 60px var(--glow-inner),
+    inset 0 1px 0 var(--border-muted);
 }
 
 .sparkle-primary {
@@ -196,7 +192,7 @@
 
 .hub-action-btn-theme-full:active {
   transform: scale(0.97);
-  background: var(--primary-dim);
+  background: var(--shadow-sm);
 }
 
 .hub-action-btn-hire-full:active {
