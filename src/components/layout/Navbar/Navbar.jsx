@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useActiveSection } from "../../../hooks/useActiveSection";
 
 import { Logo } from "../../ui/Logo/Logo";
-import { NavLinks } from "./components/NavLinks";
-import { NavbarActions } from "./components/NavbarActions";
-import { MobileMenu } from "./components/MobileMenu";
+import { NavLinks } from "./subcomponents/NavLinks";
+import { NavbarActions } from "./subcomponents/NavbarActions";
+import { MobileMenu } from "./subcomponents/MobileMenu";
 
 import classes from "./Navbar.module.css";
 
