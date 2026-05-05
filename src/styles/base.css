@@ -81,6 +81,7 @@ p {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 /* LISTS */
@@ -99,6 +100,6 @@ button {
 
 /* SELECTION */
 ::selection {
-  background: rgba(0, 102, 255, 0.35);
+  background: var(--border-primary-strong);
   color: var(--text-main);
 }
