@@ -3,7 +3,7 @@ import { Navbar } from "./components/layout/Navbar/Navbar.jsx";
 // import { Footer } from "./components/layout/Footer";
 
 // Sections
-// import { Hero } from "./components/sections/Hero/Hero.jsx";
+import { Home } from "./components/sections/Home/Home.jsx";
 // import { About } from "./components/sections/About/About.jsx";
 // import { Work } from "./components/sections/Work/Work.jsx";
 // import { Contact } from "./components/sections/Contact/Contact.jsx";
@@ -13,8 +13,8 @@ export const App = () => {
     <>
       <Navbar />
       <main>
-        {/* <Hero />
-        <About />
+        <Home />
+        {/* <About />
         <Work />
         <Contact /> */}
       </main>
