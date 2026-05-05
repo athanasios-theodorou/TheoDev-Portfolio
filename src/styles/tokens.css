@@ -44,6 +44,7 @@
 
   /* Accent Hightlights */
   --accent-bg-subtle: rgba(0, 212, 255, 0.12); /* Cyan highlight for accents */
+  --accent-bg-hover: rgba(0, 212, 255, 0.4); /* High-contrast bg on hover */
 
   /* ── 7. GLASS EFFECTS ────────────────────────────────── */
   --glass-light: rgba(255, 255, 255, 0.02); /* Barely visible frosted effect */
