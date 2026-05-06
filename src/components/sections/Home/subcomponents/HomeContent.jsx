@@ -1,3 +1,5 @@
+import { Code2, Mail } from "lucide-react";
+
 import classes from "./HomeContent.module.css";
 
 export const HomeContent = () => {
@@ -14,8 +16,13 @@ export const HomeContent = () => {
         complex code into elegant digital products.
       </p>
       <div className={classes["home-actions"]}>
-        <a className={classes["home-btn-primary"]}>View Projects</a>
-        <a className={classes["home-btn-secondary"]}>Let's Talk</a>
+        <a className={classes["home-btn-primary"]}>
+          <Code2 size={16} /> View Projects
+        </a>
+        <a className={classes["home-btn-secondary"]}>
+          <Mail size={16} />
+          Let's Talk
+        </a>
       </div>
     </div>
   );
