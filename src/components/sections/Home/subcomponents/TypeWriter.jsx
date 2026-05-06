@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 import classes from "./TypeWriter.module.css";
 
@@ -56,7 +57,11 @@ export const TypeWriter = () => {
   return (
     <span className={classes["typewriter-container"]}>
       <span className={classes["typewriter-text"]}>{text}</span>
-      <span className={classes["typewriter-cursor"]} />
+      <motion.span
+        animate={{ opacity: [1, 0] }}
+        transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+        className={classes["typewriter-cursor"]}
+      />
     </span>
   );
 };
