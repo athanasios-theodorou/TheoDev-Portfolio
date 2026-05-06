@@ -16,8 +16,9 @@
 }
 
 .home-h1-first {
-  color: var(--text-main);
+  display: block;
   margin-bottom: 0.25rem;
+  color: var(--text-main);
 }
 
 .home-h1-second {
