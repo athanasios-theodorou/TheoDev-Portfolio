@@ -1,10 +1,17 @@
+import { motion } from "framer-motion";
 import { personal, skills } from "../../../../assets/data/portfolio";
+import { slowZoomIn } from "../../../../utils/animations";
 
 import classes from "./CodePanel.module.css";
 
-export const CodePanel = () => {
+export const CodePanel = ({ shouldAnimate }) => {
   return (
-    <div className={classes["home-code-panel-wrapper"]}>
+    <motion.div
+      variants={slowZoomIn}
+      initial="hidden"
+      animate={shouldAnimate ? "visible" : "hidden"}
+      className={classes["home-code-panel-wrapper"]}
+    >
       {/* Glow */}
       <div className={classes["home-code-panel-glow"]} />
 
@@ -96,9 +103,13 @@ export const CodePanel = () => {
             <span className={classes["home-code-panel-punctuation"]}>
               :
             </span>{" "}
-            <span className={classes["home-code-panel-success"]}>
+            <motion.span
+              animate={{ opacity: [1, 0.5, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className={classes["home-code-panel-success"]}
+            >
               "Building..."
-            </span>
+            </motion.span>
           </div>
 
           {/* closing bracket */}
@@ -109,6 +120,6 @@ export const CodePanel = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

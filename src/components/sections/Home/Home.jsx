@@ -26,7 +26,7 @@ export const Home = () => {
           {/* LEFT CONTENT */}
           <HomeContent shouldAnimate={shouldAnimate} />
           {/* RIGHT CONTENT */}
-          <CodePanel />
+          <CodePanel shouldAnimate={shouldAnimate} />
         </div>
       </div>
     </section>
