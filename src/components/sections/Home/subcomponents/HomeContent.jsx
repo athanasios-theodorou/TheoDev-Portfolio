@@ -50,6 +50,13 @@ export const HomeContent = ({ shouldAnimate }) => {
 
       <motion.div variants={slowFadeUp} className={classes["home-actions"]}>
         <motion.a
+          href="#work"
+          onClick={(e) => {
+            e.preventDefault();
+            document
+              .querySelector("#work")
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className={classes["home-btn-primary"]}
@@ -57,6 +64,13 @@ export const HomeContent = ({ shouldAnimate }) => {
           <Code2 size={16} /> View Projects
         </motion.a>
         <motion.a
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            document
+              .querySelector("#contact")
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className={classes["home-btn-secondary"]}
