@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { HomeContent } from "./subcomponents/HomeContent";
+import { CodePanel } from "./subcomponents/CodePanel";
 
 import classes from "./Home.module.css";
 
@@ -22,10 +23,10 @@ export const Home = () => {
     <section id="home" className={classes["home-section"]}>
       <div className={classes["home-container"]}>
         <div className={classes["home-grid"]}>
-          {/* COMPONENT 1 - LEFT CONTENT */}
+          {/* LEFT CONTENT */}
           <HomeContent shouldAnimate={shouldAnimate} />
-          {/* COMPONENT 2 - RIGHT CONTENT */}
-          <div></div>
+          {/* RIGHT CONTENT */}
+          <CodePanel />
         </div>
       </div>
     </section>
