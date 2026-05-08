@@ -4,6 +4,7 @@ export const personal = {
   name: "Athanasios Theodorou",
   alias: "TheoDev",
   tagline: "React Developer",
+  bio: "As a Frontend Developer specializing in React and modern web technologies, I focus on building scalable, high-performance, and visually refined digital experiences. I enjoy transforming complex ideas into intuitive interfaces with clean architecture, smooth interactions, and strong attention to detail — creating products that feel modern in every aspect.",
   email: "athanasiostheodorou13@gmail.com",
   location: "Athens, Greece",
   links: {
