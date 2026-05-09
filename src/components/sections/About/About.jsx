@@ -1,8 +1,9 @@
 import { Download, Code2 } from "lucide-react";
 import { personal, stats } from "../../../assets/data/portfolio";
-import portfolioImage from "../../../assets/images/portfolio.jpg";
-
 import { StatCard } from "./subcomponents/StatCard";
+
+import portfolioImage from "../../../assets/images/portfolio.jpg";
+import cvFile from "../../../assets/documents/Athanasios-Theodorou-CV.pdf";
 
 import classes from "./About.module.css";
 
@@ -17,10 +18,24 @@ export const About = () => {
             <h2 className={classes["about-name"]}>{personal.name}</h2>
             <p className={classes["about-description"]}>{personal.bio}</p>
             <div className={classes["about-actions"]}>
-              <a className={classes["about-btn-primary"]}>
+              <a
+                href={cvFile}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={classes["about-btn-primary"]}
+              >
                 <Download size={16} /> Download CV
               </a>
-              <a className={classes["about-btn-secondary"]}>
+              <a
+                href="#work"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .querySelector("#work")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={classes["about-btn-secondary"]}
+              >
                 <Code2 size={16} /> View Projects
               </a>
             </div>
