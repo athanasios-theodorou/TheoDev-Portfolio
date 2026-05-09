@@ -1,6 +1,9 @@
 import { Download, Code2 } from "lucide-react";
-import { personal } from "../../../assets/data/portfolio";
+import { personal, stats } from "../../../assets/data/portfolio";
 import portfolioImage from "../../../assets/images/portfolio.jpg";
+
+import { StatCard } from "./subcomponents/StatCard";
+
 import classes from "./About.module.css";
 
 export const About = () => {
@@ -34,6 +37,13 @@ export const About = () => {
               />
             </div>
           </div>
+        </div>
+
+        {/* Stats Grid */}
+        <div className={classes["about-stats-grid"]}>
+          {stats.map((stat) => (
+            <StatCard key={stat.label} stat={stat} />
+          ))}
         </div>
       </div>
     </section>

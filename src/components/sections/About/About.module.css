@@ -164,3 +164,15 @@
   object-fit: contain;
   display: block;
 }
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .about-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
