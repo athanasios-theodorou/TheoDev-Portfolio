@@ -32,3 +32,24 @@ export const skills = [
   "MySQL",
   "and many more...",
 ];
+
+export const stats = [
+  {
+    label: "Total Projects",
+    value: "6",
+    icon: "code",
+    description: "Innovative web solutions crafted",
+  },
+  {
+    label: "Certificates",
+    value: "3",
+    icon: "award",
+    description: "Professional skills validated",
+  },
+  {
+    label: "Years of Experience",
+    value: "2",
+    icon: "globe",
+    description: "Continuous learning journey",
+  },
+];
