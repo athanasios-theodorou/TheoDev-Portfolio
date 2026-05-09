@@ -1,6 +1,7 @@
 import { Download, Code2 } from "lucide-react";
 import { personal, stats } from "../../../assets/data/portfolio";
 import { StatCard } from "./subcomponents/StatCard";
+import { SectionTitle } from "../../ui/SectionTitle/SectionTitle.jsx";
 
 import portfolioImage from "../../../assets/images/portfolio.jpg";
 import cvFile from "../../../assets/documents/Athanasios-Theodorou-CV.pdf";
@@ -11,6 +12,13 @@ export const About = () => {
   return (
     <section id="about" className={classes["about-section"]}>
       <div className={classes["about-container"]}>
+        <SectionTitle
+          title="About"
+          highlight="Me"
+          subtitle="Transforming ideas into digital experiences"
+          withGlow
+          center
+        />
         <div className={classes["about-top-grid"]}>
           {/* LEFT ΒΙΟ CONTENT */}
           <div className={classes["about-bio-content"]}>
