@@ -98,11 +98,17 @@ export const About = () => {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className={classes["about-stats-grid"]}>
-          {stats.map((stat) => (
-            <StatCard key={stat.label} stat={stat} />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+          variants={staggerContainer}
+          className={classes["about-stats-grid"]}
+        >
+          {stats.map((stat, i) => (
+            <StatCard key={stat.label} stat={stat} index={i} />
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
