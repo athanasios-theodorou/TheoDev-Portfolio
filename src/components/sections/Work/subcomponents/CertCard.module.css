@@ -1,0 +1,113 @@
+.glass-card {
+  background: var(--action-bg-subtle);
+  background: var(--action-bg-subtle);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s,
+    transform 0.3s;
+}
+
+.glass-card:hover {
+  border-color: var(--border-primary-strong);
+  box-shadow: 0 0 30px var(--shadow-sm);
+}
+
+.cert-card {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  will-change: transform, opacity;
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-card-num {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  background: var(--action-bg-base);
+  border: 1px solid var(--border-primary-subtle);
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.cert-card-content {
+  flex: 1;
+  min-width: 0;
+  padding-right: 1.5rem;
+}
+
+.cert-card-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.cert-card-meta {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  margin-top: 0.125rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.cert-card-icon {
+  flex-shrink: 0;
+  opacity: 0.15;
+  transition: all 0.3s ease;
+  color: var(--accent);
+}
+
+.cert-card:hover .cert-card-icon {
+  opacity: 0.6;
+  transform: scale(1.1) rotate(5deg);
+}
+
+@media (min-width: 641px) {
+  .cert-card-content {
+    padding-right: 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .cert-card {
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .cert-card-num {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 0.75rem;
+    margin-top: 0.125rem;
+  }
+
+  .cert-card-title {
+    font-size: 0.8125rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .cert-card-icon {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 14px;
+    height: 14px;
+    opacity: 0.15;
+  }
+}
