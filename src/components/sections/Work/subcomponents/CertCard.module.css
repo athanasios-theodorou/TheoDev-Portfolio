@@ -1,6 +1,5 @@
 .glass-card {
   background: var(--action-bg-subtle);
-  background: var(--action-bg-subtle);
   border: 1px solid var(--border-subtle);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -66,7 +65,9 @@
 .cert-card-icon {
   flex-shrink: 0;
   opacity: 0.15;
-  transition: all 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   color: var(--accent);
 }
 
