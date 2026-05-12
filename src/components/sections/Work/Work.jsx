@@ -9,12 +9,22 @@ export const Work = () => {
   const [activeTab, setActiveTab] = useState("projects");
 
   return (
-    <section id="work" className={classes["portfolio-section"]}>
-      <div className={classes["portfolio-container"]}>
+    <section id="work" className={classes["work-section"]}>
+      <div className={classes["work-container"]}>
         <SectionTitle
           title="Work"
           highlight="Showcase"
-          subtitle="Explore my journey through projects, certifications, and technical expertise. Each section represents a milestone in my continuous learning path."
+          subtitle={
+            <>
+              Explore my journey through projects, certifications, and technical
+              expertise.
+              <br />
+              Each section represents a milestone in my continuous learning
+              path.
+            </>
+          }
+          center
+          withGlow
         />
 
         {/* Work tabs */}

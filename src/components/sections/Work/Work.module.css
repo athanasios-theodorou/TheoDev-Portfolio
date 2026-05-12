@@ -1,0 +1,14 @@
+.work-section {
+  position: relative;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  overflow: hidden;
+}
+
+.work-container {
+  position: relative;
+  z-index: 10;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
