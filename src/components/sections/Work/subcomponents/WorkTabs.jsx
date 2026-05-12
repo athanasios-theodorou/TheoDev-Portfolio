@@ -22,7 +22,7 @@ export const WorkTabs = ({ activeTab, onChangeTab }) => {
             >
               {isActive && <div className={classes["work-tab-highlight"]} />}
               <span className={classes["work-tab-label-elite"]}>
-                <Icon size={16} />
+                <Icon size={16} className={classes["tab-icon-elite"]} />
                 {label}
               </span>
             </button>
