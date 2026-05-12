@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { SectionTitle } from "../../ui/SectionTitle/SectionTitle";
 import { WorkTabContent } from "./subcomponents/WorkTabContent";
 import { WorkTabs } from "./subcomponents/WorkTabs";
@@ -5,6 +6,8 @@ import { WorkTabs } from "./subcomponents/WorkTabs";
 import classes from "./Work.module.css";
 
 export const Work = () => {
+  const [activeTab, setActiveTab] = useState("projects");
+
   return (
     <section id="work" className={classes["portfolio-section"]}>
       <div className={classes["portfolio-container"]}>
@@ -15,7 +18,7 @@ export const Work = () => {
         />
 
         {/* Work tabs */}
-        <WorkTabs />
+        <WorkTabs activeTab={activeTab} onChangeTab={setActiveTab} />
 
         {/* Work tab content */}
         <WorkTabContent />
