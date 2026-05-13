@@ -7,6 +7,7 @@ import classes from "./Work.module.css";
 
 export const Work = () => {
   const [activeTab, setActiveTab] = useState("projects");
+  const [activeProject, setActiveProject] = useState(null);
 
   return (
     <section id="work" className={classes["work-section"]}>
@@ -31,7 +32,7 @@ export const Work = () => {
         <WorkTabs activeTab={activeTab} onChangeTab={setActiveTab} />
 
         {/* Work tab content */}
-        <WorkTabContent />
+        <WorkTabContent onOpenProject={setActiveProject} />
       </div>
     </section>
   );
