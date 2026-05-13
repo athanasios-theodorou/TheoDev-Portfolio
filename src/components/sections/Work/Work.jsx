@@ -2,6 +2,7 @@ import { useState } from "react";
 import { SectionTitle } from "../../ui/SectionTitle/SectionTitle";
 import { WorkTabContent } from "./subcomponents/WorkTabContent";
 import { WorkTabs } from "./subcomponents/WorkTabs";
+import { ProjectModal } from "./subcomponents/ProjectModal";
 
 import classes from "./Work.module.css";
 
@@ -37,6 +38,14 @@ export const Work = () => {
           onOpenProject={setActiveProject}
         />
       </div>
+
+      {/* Project modal */}
+      {activeProject && (
+        <ProjectModal
+          project={activeProject}
+          onClose={() => setActiveProject(null)}
+        />
+      )}
     </section>
   );
 };
