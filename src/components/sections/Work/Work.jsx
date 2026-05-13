@@ -32,7 +32,10 @@ export const Work = () => {
         <WorkTabs activeTab={activeTab} onChangeTab={setActiveTab} />
 
         {/* Work tab content */}
-        <WorkTabContent onOpenProject={setActiveProject} />
+        <WorkTabContent
+          activeTab={activeTab}
+          onOpenProject={setActiveProject}
+        />
       </div>
     </section>
   );
