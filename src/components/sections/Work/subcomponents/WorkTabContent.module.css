@@ -1,3 +1,27 @@
+/* Projects-Certs-Techs */
+.work-projects-grid,
+.work-certs-grid,
+.work-tech-grid {
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+/* PROJECTS */
+.work-projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .work-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 65rem;
+    margin: 0 auto;
+  }
+}
+
 /* CERTIFICATES */
 .work-certs-grid {
   display: grid;
