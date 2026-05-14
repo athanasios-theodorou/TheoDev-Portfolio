@@ -13,7 +13,7 @@ export const WorkTabContent = ({ activeTab, onOpenProject }) => {
   return (
     <div>
       {activeTab === "projects" && (
-        <div key="projects" className={classes["work-projects-grid"]}>
+        <div className={classes["work-projects-grid"]}>
           {projects.map((project, i) => (
             <ProjectCard
               key={project.id}
@@ -26,7 +26,7 @@ export const WorkTabContent = ({ activeTab, onOpenProject }) => {
       )}
 
       {activeTab === "certificates" && (
-        <div key="certificates" className={classes["work-certs-grid"]}>
+        <div className={classes["work-certs-grid"]}>
           {certificates.map((cert, i) => (
             <CertCard key={cert.title} cert={cert} index={i} />
           ))}
@@ -34,7 +34,7 @@ export const WorkTabContent = ({ activeTab, onOpenProject }) => {
       )}
 
       {activeTab === "techstack" && (
-        <div key="techstack" className={classes["tech-stack-organized"]}>
+        <div className={classes["tech-stack-organized"]}>
           {techStack.map((group) => (
             <div key={group.category}>
               <div className={classes["tech-category-header-centered"]}>
