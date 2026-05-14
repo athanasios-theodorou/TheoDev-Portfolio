@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { SectionTitle } from "../../ui/SectionTitle/SectionTitle";
 import { WorkTabContent } from "./subcomponents/WorkTabContent";
 import { WorkTabs } from "./subcomponents/WorkTabs";
@@ -12,7 +13,7 @@ export const Work = () => {
 
   return (
     <section id="work" className={classes["work-section"]}>
-      <div className={classes["work-container"]}>
+      <motion.div className={classes["work-container"]}>
         <SectionTitle
           title="Work"
           highlight="Showcase"
@@ -37,15 +38,17 @@ export const Work = () => {
           activeTab={activeTab}
           onOpenProject={setActiveProject}
         />
-      </div>
+      </motion.div>
 
       {/* Project modal */}
-      {activeProject && (
-        <ProjectModal
-          project={activeProject}
-          onClose={() => setActiveProject(null)}
-        />
-      )}
+      <AnimatePresence>
+        {activeProject && (
+          <ProjectModal
+            project={activeProject}
+            onClose={() => setActiveProject(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 };

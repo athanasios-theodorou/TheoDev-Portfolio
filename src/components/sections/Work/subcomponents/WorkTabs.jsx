@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Code2, Award, Layers } from "lucide-react";
 
 import classes from "./WorkTabs.module.css";
@@ -20,7 +21,17 @@ export const WorkTabs = ({ activeTab, onChangeTab }) => {
               onClick={() => onChangeTab(id)}
               className={`${classes["work-tab-btn-elite"]} ${isActive ? classes.active : ""}`}
             >
-              {isActive && <div className={classes["work-tab-highlight"]} />}
+              {isActive && (
+                <motion.div
+                  layoutId="tab-highlight"
+                  transition={{
+                    type: "spring",
+                    bounce: 0.2,
+                    duration: 0.6,
+                  }}
+                  className={classes["work-tab-highlight"]}
+                />
+              )}
               <span className={classes["work-tab-label-elite"]}>
                 <Icon size={16} className={classes["tab-icon-elite"]} />
                 {label}
