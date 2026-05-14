@@ -1,13 +1,32 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { zoomIn } from "../../../../utils/animations.js";
 import { Code2 } from "lucide-react";
 
 import classes from "./TechCard.module.css";
 
-export const TechCard = ({ tech }) => {
+export const TechCard = ({ tech, index }) => {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div className={`${classes["glass-card"]} ${classes["tech-card"]}`}>
+    <motion.div
+      variants={zoomIn}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.1 }}
+      custom={index * 0.05}
+      whileHover={{
+        y: -8,
+        rotate: 2,
+        scale: 1.1,
+        transition: {
+          type: "spring",
+          stiffness: 120,
+          damping: 30,
+        },
+      }}
+      className={`${classes["glass-card"]} ${classes["tech-card"]}`}
+    >
       <div className={classes["tech-card-icon-wrapper"]}>
         <div className={classes["tech-card-glow"]} />
         {!imgError ? (
@@ -22,6 +41,6 @@ export const TechCard = ({ tech }) => {
         )}
       </div>
       <span className={classes["tech-card-name"]}>{tech.name}</span>
-    </div>
+    </motion.div>
   );
 };
