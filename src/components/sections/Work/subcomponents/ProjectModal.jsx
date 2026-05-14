@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { X } from "lucide-react";
 
 import classes from "./ProjectModal.module.css";
@@ -27,8 +28,18 @@ export const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
 
   return (
-    <div className={classes["project-modal-overlay"]} onClick={onClose}>
-      <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className={classes["project-modal-overlay"]}
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0, y: 20 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.9, opacity: 0, y: 20 }}
+        transition={{ type: "spring", damping: 25, stiffness: 300 }}
         className={classes["project-modal-container"]}
         onClick={(e) => e.stopPropagation()}
       >
@@ -38,7 +49,12 @@ export const ProjectModal = ({ project, onClose }) => {
 
         <div className={classes["project-modal-layout"]}>
           {/* Project Intro Bar */}
-          <div className={classes["project-modal-intro-bar"]}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className={classes["project-modal-intro-bar"]}
+          >
             <div className={classes["intro-bar-left"]}>
               <span className={classes["intro-meta-label"]}>Project No.</span>
               <span className={classes["intro-meta-value"]}>
@@ -55,15 +71,27 @@ export const ProjectModal = ({ project, onClose }) => {
                 {project.status}
               </span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Project Title */}
-          <h2 className={classes["project-modal-elite-title"]}>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className={classes["project-modal-elite-title"]}
+          >
             {project.title}
-          </h2>
+          </motion.h2>
 
           {/* Project Gallery Section */}
-          <div className={classes["project-modal-gallery-section"]}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98, y: 40 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+            className={classes["project-modal-gallery-section"]}
+          >
             <div className={classes["gallery-main-frame"]}>
               <img
                 src={project.image}
@@ -78,10 +106,16 @@ export const ProjectModal = ({ project, onClose }) => {
                 </span>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Technical Narrative / Details Section */}
-          <div className={classes["narrative-grid"]}>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className={classes["narrative-grid"]}
+          >
             <div>
               <h4 className={classes["narrative-subtitle"]}>
                 Project Synopsis
@@ -143,9 +177,9 @@ export const ProjectModal = ({ project, onClose }) => {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };

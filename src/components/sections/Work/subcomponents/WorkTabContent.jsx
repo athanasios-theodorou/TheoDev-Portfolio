@@ -14,11 +14,12 @@ export const WorkTabContent = ({ activeTab, onOpenProject }) => {
     <div>
       {activeTab === "projects" && (
         <div key="projects" className={classes["work-projects-grid"]}>
-          {projects.map((project) => (
+          {projects.map((project, i) => (
             <ProjectCard
               key={project.id}
               project={project}
               onOpen={onOpenProject}
+              index={i}
             />
           ))}
         </div>
