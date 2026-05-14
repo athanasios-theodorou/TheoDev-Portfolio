@@ -156,21 +156,25 @@ export const ProjectModal = ({ project, onClose }) => {
 
               <div className={classes["narrative-actions-elite"]}>
                 {project.status === "Deployed" && (
-                  <a
+                  <motion.a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     className={`${classes["elite-action-btn"]} ${classes["primary"]}`}
                   >
                     Open Experience
-                  </a>
+                  </motion.a>
                 )}
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   className={`${classes["elite-action-btn"]} ${classes["secondary"]}`}
                   onClick={onClose}
                 >
                   Close Perspective
-                </button>
+                </motion.button>
               </div>
             </div>
           </motion.div>
