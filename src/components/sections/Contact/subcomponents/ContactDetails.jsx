@@ -1,5 +1,6 @@
 import { Mail, MapPin } from "lucide-react";
 import { personal } from "../../../../assets/data/portfolio";
+import { SocialMedia } from "../../../ui/SocialMedia/SocialMedia";
 
 import classes from "./ContactDetails.module.css";
 
@@ -48,6 +49,12 @@ export const ContactDetails = () => {
             <p className={classes["contact-info-label"]}>Location</p>
             <p className={classes["contact-info-value"]}>{personal.location}</p>
           </div>
+        </div>
+
+        {/* Social Media */}
+        <div>
+          <p className={classes["contact-social-label"]}>Find me on</p>
+          <SocialMedia />
         </div>
       </div>
     </div>

@@ -87,3 +87,14 @@
 a.contact-info-value:hover {
   color: var(--accent);
 }
+
+/* Social Media */
+.contact-social-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
