@@ -1,0 +1,80 @@
+.work-tabs-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3.5rem;
+  width: 100%;
+}
+
+.work-tabs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  padding: 0.375rem;
+  background: var(--glass-light);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.work-tab-btn-elite {
+  position: relative;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.work-tab-btn-elite.active {
+  color: var(--text-main);
+}
+
+.work-tab-highlight {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 0.75rem;
+  box-shadow: 0 5px 15px var(--shadow-md);
+}
+
+.work-tab-label-elite {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .work-tabs-nav {
+    margin-bottom: 3rem;
+  }
+
+  .work-tabs-container {
+    gap: 0.25rem;
+    padding: 0.25rem;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .work-tab-btn-elite {
+    padding: 0.6rem 0.875rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+
+  .tab-icon-elite {
+    width: 12px;
+    height: 12px;
+  }
+}

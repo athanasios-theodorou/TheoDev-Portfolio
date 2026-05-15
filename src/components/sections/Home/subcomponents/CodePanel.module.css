@@ -61,7 +61,7 @@
 }
 
 .home-code-panel-dots span:nth-child(2) {
-  background: #febc2e;
+  background: var(--status-progress);
 }
 
 .home-code-panel-dots span:nth-child(3) {
