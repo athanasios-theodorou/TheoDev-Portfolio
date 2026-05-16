@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
 }
 
 /* Available Card */
@@ -97,4 +99,9 @@ a.contact-info-value:hover {
   letter-spacing: 0.1em;
   margin-bottom: 0.5rem;
   display: block;
+}
+@media (min-width: 1024px) {
+  .contact-left-col {
+    grid-column: span 2 / span 2;
+  }
 }
