@@ -1,5 +1,6 @@
 import { SectionTitle } from "../../ui/SectionTitle/SectionTitle";
 import { ContactDetails } from "./subcomponents/ContactDetails";
+import { ContactForm } from "./subcomponents/ContactForm";
 
 import classes from "./Contact.module.css";
 
@@ -15,7 +16,11 @@ export const Contact = () => {
       />
       <div className={classes["contact-container"]}>
         <div className={classes["contact-grid"]}>
+          {/* LEFT CONTENT */}
           <ContactDetails />
+
+          {/* RIGHT CONTENT */}
+          <ContactForm />
         </div>
       </div>
     </section>
