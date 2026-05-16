@@ -26,6 +26,7 @@
   width: 100%;
   border-radius: 0.75rem;
   padding: 1rem;
+  font-family: var(--font-body);
   font-size: 0.9375rem;
   color: var(--text-main);
   outline: none;
@@ -62,6 +63,31 @@
 .contact-submit-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px var(--border-primary-strong);
+}
+
+/* SENDING STATE */
+.contact-submit-btn--sending {
+  background: var(--action-bg-base);
+  opacity: 0.8;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}
+
+/* SENT STATE */
+.contact-submit-btn--sent {
+  background: linear-gradient(
+    135deg,
+    var(--status-success),
+    var(--status-success-dark)
+  );
+
+  box-shadow: 0 10px 30px var(--status-success-glow);
+}
+
+.contact-submit-btn--sent:hover {
+  transform: translateY(-1px);
 }
 
 @media (min-width: 1024px) {
