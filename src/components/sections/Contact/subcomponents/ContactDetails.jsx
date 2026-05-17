@@ -7,14 +7,6 @@ import classes from "./ContactDetails.module.css";
 export const ContactDetails = () => {
   return (
     <div className={classes["contact-left-col"]}>
-      {/* Available Card */}
-      <div className={classes["contact-available-card"]}>
-        <span className={classes["contact-available-dot"]} />
-        <span className={classes["contact-available-label"]}>
-          Open to full-time, contract, and freelance
-        </span>
-      </div>
-
       {/* Description */}
       <div>
         <h3 className={classes["contact-header-title"]}>Let's work together</h3>
@@ -55,6 +47,14 @@ export const ContactDetails = () => {
         <div>
           <p className={classes["contact-social-label"]}>Find me on</p>
           <SocialMedia />
+        </div>
+
+        {/* Available Card */}
+        <div className={classes["contact-available-card"]}>
+          <span className={classes["contact-available-dot"]} />
+          <span className={classes["contact-available-label"]}>
+            Open to full-time, contract, and freelance
+          </span>
         </div>
       </div>
     </div>
