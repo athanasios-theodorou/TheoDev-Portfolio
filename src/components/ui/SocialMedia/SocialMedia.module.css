@@ -13,10 +13,13 @@
   background: var(--action-bg-hover);
   border: 1px solid var(--border-muted);
   color: var(--accent);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(8px);
+  transition:
+    border-color 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .social-link:hover {

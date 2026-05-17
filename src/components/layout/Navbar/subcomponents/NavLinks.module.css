@@ -4,7 +4,7 @@
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   text-decoration: none;
 }
 
@@ -44,8 +44,11 @@
   background: var(--glass-light);
   border: 1px solid var(--border-subtle);
   border-radius: 14px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-menu-link-pill:active {
@@ -65,7 +68,7 @@
   font-weight: 700;
   text-transform: uppercase;
   color: var(--text-interactive);
-  transition: all 0.4s;
+  transition: color 0.4s;
   position: relative;
   z-index: 2;
 }

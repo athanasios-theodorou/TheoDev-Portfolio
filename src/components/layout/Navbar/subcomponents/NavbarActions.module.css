@@ -30,10 +30,13 @@
   border-radius: 50%;
   color: var(--primary-light);
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   width: 2.6rem;
   height: 2.6rem;
+  transition:
+    background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar-theme-wrapper:hover .navbar-theme-icon-btn {
@@ -87,11 +90,13 @@
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 600;
-  transition: all 0.3s ease;
   text-decoration: none;
   border: 1px solid var(--border-primary-strong);
   background: var(--action-bg-base);
   color: var(--text-main);
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 @media (min-width: 768px) {
