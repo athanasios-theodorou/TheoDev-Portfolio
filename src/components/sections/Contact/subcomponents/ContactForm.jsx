@@ -1,9 +1,29 @@
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import {
+  slideInRight,
+  staggerContainer,
+  fadeUp,
+} from "../../../../utils/animations";
 import { Send, Loader2, CheckCircle2 } from "lucide-react";
 import { useContactForm } from "../../../../hooks/useContactForm";
 
 import classes from "./ContactForm.module.css";
 
 export const ContactForm = () => {
+  const formRef = useRef(null);
+
+  // Sticky effect for form fields (staggered stack)
+  const { scrollYProgress: formScroll } = useScroll({
+    target: formRef,
+    offset: ["start end", "end start"],
+  });
+  const formStickyY = useTransform(formScroll, [0, 1], [30, -30]);
+  const formSmoothStickyY = useSpring(formStickyY, {
+    stiffness: 100,
+    damping: 20,
+  });
+
   const { form, status, handleChange, handleSubmit } = useContactForm();
 
   const getButtonStateClass = () => {
@@ -37,8 +57,23 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className={classes["contact-form-col"]}>
-      <form className={classes["contact-form"]} onSubmit={handleSubmit}>
+    <motion.div
+      ref={formRef}
+      variants={slideInRight}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
+      style={{ y: formSmoothStickyY }}
+      className={classes["contact-form-col"]}
+    >
+      <motion.form
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false }}
+        className={classes["contact-form"]}
+        onSubmit={handleSubmit}
+      >
         {/* Honeypot (anti-bot hidden field) */}
         <input
           type="text"
@@ -51,7 +86,11 @@ export const ContactForm = () => {
         />
 
         {/* Full Name */}
-        <div className={classes["contact-input-group"]}>
+        <motion.div
+          variants={fadeUp}
+          custom={0.1}
+          className={classes["contact-input-group"]}
+        >
           <label className={classes["contact-input-label"]}>Full Name</label>
           <input
             className={classes["contact-input"]}
@@ -62,10 +101,14 @@ export const ContactForm = () => {
             onChange={handleChange}
             required
           />
-        </div>
+        </motion.div>
 
         {/* Email */}
-        <div className={classes["contact-input-group"]}>
+        <motion.div
+          variants={fadeUp}
+          custom={0.2}
+          className={classes["contact-input-group"]}
+        >
           <label className={classes["contact-input-label"]}>Email</label>
           <input
             className={classes["contact-input"]}
@@ -76,10 +119,14 @@ export const ContactForm = () => {
             onChange={handleChange}
             required
           />
-        </div>
+        </motion.div>
 
         {/* Subject */}
-        <div className={classes["contact-input-group"]}>
+        <motion.div
+          variants={fadeUp}
+          custom={0.3}
+          className={classes["contact-input-group"]}
+        >
           <label className={classes["contact-input-label"]}>Subject</label>
           <input
             className={classes["contact-input"]}
@@ -90,10 +137,14 @@ export const ContactForm = () => {
             onChange={handleChange}
             required
           />
-        </div>
+        </motion.div>
 
         {/* Message */}
-        <div className={classes["contact-input-group"]}>
+        <motion.div
+          variants={fadeUp}
+          custom={0.4}
+          className={classes["contact-input-group"]}
+        >
           <label className={classes["contact-input-label"]}>Message</label>
           <textarea
             className={
@@ -105,17 +156,21 @@ export const ContactForm = () => {
             onChange={handleChange}
             required
           />
-        </div>
+        </motion.div>
 
         {/* Submit Button */}
-        <button
+        <motion.button
+          variants={fadeUp}
+          custom={0.5}
+          whileHover={status === "idle" ? { scale: 1.02 } : {}}
+          whileTap={status === "idle" ? { scale: 0.98 } : {}}
           className={`${classes["contact-submit-btn"]} ${getButtonStateClass()}`}
           type="submit"
           disabled={status !== "idle"}
         >
           {renderButtonContent()}
-        </button>
-      </form>
-    </div>
+        </motion.button>
+      </motion.form>
+    </motion.div>
   );
 };
