@@ -1,0 +1,27 @@
+.social-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--action-bg-hover);
+  border: 1px solid var(--border-muted);
+  color: var(--accent);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.social-link:hover {
+  border-color: var(--accent-bg-hover);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 20px var(--shadow-md);
+}

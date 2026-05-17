@@ -6,7 +6,7 @@ import { Navbar } from "./components/layout/Navbar/Navbar.jsx";
 import { Home } from "./components/sections/Home/Home.jsx";
 import { About } from "./components/sections/About/About.jsx";
 import { Work } from "./components/sections/Work/Work.jsx";
-// import { Contact } from "./components/sections/Contact/Contact.jsx";
+import { Contact } from "./components/sections/Contact/Contact.jsx";
 
 export const App = () => {
   return (
@@ -16,8 +16,7 @@ export const App = () => {
         <Home />
         <About />
         <Work />
-        {/* 
-        <Contact /> */}
+        <Contact />
       </main>
       {/* <Footer /> */}
     </>
