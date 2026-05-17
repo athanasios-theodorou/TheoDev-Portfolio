@@ -1,12 +1,36 @@
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Mail, MapPin } from "lucide-react";
+import { slideInLeft } from "../../../../utils/animations";
 import { personal } from "../../../../assets/data/portfolio";
 import { SocialMedia } from "../../../ui/SocialMedia/SocialMedia";
 
 import classes from "./ContactDetails.module.css";
 
 export const ContactDetails = () => {
+  const leftColRef = useRef(null);
+
+  // Sticky effect for left column components
+  const { scrollYProgress: leftScroll } = useScroll({
+    target: leftColRef,
+    offset: ["start end", "end start"],
+  });
+  const leftStickyY = useTransform(leftScroll, [0, 1], [40, -40]);
+  const leftSmoothStickyY = useSpring(leftStickyY, {
+    stiffness: 100,
+    damping: 20,
+  });
+
   return (
-    <div className={classes["contact-left-col"]}>
+    <motion.div
+      ref={leftColRef}
+      variants={slideInLeft}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
+      style={{ y: leftSmoothStickyY }}
+      className={classes["contact-left-col"]}
+    >
       {/* Description */}
       <div>
         <h3 className={classes["contact-header-title"]}>Let's work together</h3>
@@ -57,6 +81,6 @@ export const ContactDetails = () => {
           </span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

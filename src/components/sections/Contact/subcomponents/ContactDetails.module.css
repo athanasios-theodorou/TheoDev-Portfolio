@@ -25,6 +25,17 @@
   border-radius: 50%;
   background-color: var(--status-success);
   box-shadow: 0 0 8px var(--status-success-glow);
+  animation: pulse 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* Description */

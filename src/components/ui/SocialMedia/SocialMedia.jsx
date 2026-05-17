@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   FaGithub,
   FaLinkedin,
@@ -21,16 +22,18 @@ export const SocialMedia = () => {
   return (
     <div className={classes["social-list"]}>
       {socialLinks.map(({ Icon, href, label }) => (
-        <a
+        <motion.a
           key={label}
           href={href}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           className={classes["social-link"]}
         >
           <Icon />
-        </a>
+        </motion.a>
       ))}
     </div>
   );
