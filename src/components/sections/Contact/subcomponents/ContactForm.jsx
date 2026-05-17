@@ -39,6 +39,17 @@ export const ContactForm = () => {
   return (
     <div className={classes["contact-form-col"]}>
       <form className={classes["contact-form"]} onSubmit={handleSubmit}>
+        {/* Honeypot (anti-bot hidden field) */}
+        <input
+          type="text"
+          name="botcheck"
+          value={form.botcheck}
+          onChange={handleChange}
+          autoComplete="off"
+          tabIndex="-1"
+          style={{ display: "none" }}
+        />
+
         {/* Full Name */}
         <div className={classes["contact-input-group"]}>
           <label className={classes["contact-input-label"]}>Full Name</label>
