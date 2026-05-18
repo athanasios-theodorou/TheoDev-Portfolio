@@ -17,7 +17,7 @@ export const Footer = () => {
           {/* Column 1: Brand & Identity */}
           <div className={classes["footer-col-brand"]}>
             <div className={classes["footer-logo"]}>
-              <Logo />
+              <Logo isStatic />
             </div>
 
             <p className={classes["footer-tagline"]}>
