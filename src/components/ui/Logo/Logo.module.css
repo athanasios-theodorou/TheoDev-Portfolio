@@ -3,7 +3,18 @@
   align-items: center;
   gap: 0.625rem;
   text-decoration: none;
+}
+
+.interactive {
   cursor: pointer;
+}
+
+.interactive:hover .navbar-logo-img {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.static {
+  cursor: default;
 }
 
 .navbar-logo-icon {
@@ -16,10 +27,6 @@
   height: 100%;
   object-fit: contain;
   transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.navbar-logo:hover .navbar-logo-img {
-  transform: scale(1.1) rotate(5deg);
 }
 
 .navbar-logo-text {
