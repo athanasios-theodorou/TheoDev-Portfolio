@@ -1,6 +1,6 @@
 // Layout
 import { Navbar } from "./components/layout/Navbar/Navbar.jsx";
-// import { Footer } from "./components/layout/Footer";
+import { Footer } from "./components/layout/Footer/Footer.jsx";
 
 // Sections
 import { Home } from "./components/sections/Home/Home.jsx";
@@ -18,7 +18,7 @@ export const App = () => {
         <Work />
         <Contact />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
