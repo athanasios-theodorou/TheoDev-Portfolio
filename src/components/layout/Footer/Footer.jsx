@@ -6,6 +6,8 @@ import { SocialMedia } from "../../ui/SocialMedia/SocialMedia";
 import classes from "./Footer.module.css";
 
 export const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
     <footer className={classes["footer"]}>
       <div className={classes["footer-gradient-line"]} />
@@ -68,6 +70,16 @@ export const Footer = () => {
               <SocialMedia />
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar: Copyright */}
+      <div className={classes["footer-bottom"]}>
+        <div className={classes["footer-bottom-divider"]} />
+        <div className={classes["footer-bottom-content"]}>
+          <p className={classes["footer-copyright"]}>
+            © {year} {personal.name} - All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
