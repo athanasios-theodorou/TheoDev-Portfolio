@@ -1,5 +1,5 @@
 import { MapPin } from "lucide-react";
-import { personal } from "../../../assets/data/portfolio";
+import { personal, navLinks } from "../../../assets/data/portfolio";
 import { Logo } from "../../ui/Logo/Logo";
 
 import classes from "./Footer.module.css";
@@ -27,6 +27,28 @@ export const Footer = () => {
               <MapPin size={14} className={classes["footer-icon-primary"]} />
               <span>{personal.location}</span>
             </div>
+          </div>
+
+          {/* Column 2: Quick Links */}
+          <div className={classes["footer-col-links"]}>
+            <h4 className={classes["footer-col-title"]}>Quick Links</h4>
+            <nav className={classes["footer-nav-vertical"]}>
+              {navLinks.map(({ label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .querySelector(href)
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className={classes["footer-nav-link"]}
+                >
+                  {label}
+                </a>
+              ))}
+            </nav>
           </div>
         </div>
       </div>
