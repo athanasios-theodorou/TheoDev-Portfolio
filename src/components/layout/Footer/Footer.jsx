@@ -1,6 +1,7 @@
-import { MapPin } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import { personal, navLinks } from "../../../assets/data/portfolio";
 import { Logo } from "../../ui/Logo/Logo";
+import { SocialMedia } from "../../ui/SocialMedia/SocialMedia";
 
 import classes from "./Footer.module.css";
 
@@ -49,6 +50,23 @@ export const Footer = () => {
                 </a>
               ))}
             </nav>
+          </div>
+
+          {/* Column 3: Connect & Socials */}
+          <div className={classes["footer-col-social"]}>
+            <h4 className={classes["footer-col-title"]}>Connect</h4>
+            <div className={classes["footer-contact-info"]}>
+              <a
+                href={`mailto:${personal.email}`}
+                className={classes["footer-contact-link"]}
+              >
+                <Mail size={14} className={classes["footer-icon-primary"]} />
+                <span>{personal.email}</span>
+              </a>
+            </div>
+            <div className={classes["footer-social-wrapper"]}>
+              <SocialMedia />
+            </div>
           </div>
         </div>
       </div>
