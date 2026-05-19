@@ -46,7 +46,7 @@
 }
 
 .theme-btn-text {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
