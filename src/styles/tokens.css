@@ -69,7 +69,6 @@
 
 [data-theme="light"] {
   /* ── 2. BRAND COLORS ─────────────────────────────────── */
-
   --accent: #007a99;
 
   /* ── 3. BACKGROUNDS & SURFACES ───────────────────────── */
@@ -86,7 +85,6 @@
 
   /* Interactive Text */
   --text-interactive: rgba(15, 23, 42, 0.6);
-  /* Hover στο primary-dark για πιο "ζωντανό" click feeling */
   --text-interactive-hover: var(--primary-dark);
 
   /* ── 5. BORDERS ──────────────────────────────────────── */
@@ -102,7 +100,6 @@
   --action-bg-hover: rgba(0, 102, 255, 0.12);
   --action-bg-active: rgba(0, 102, 255, 0.18);
 
-  /* Προσαρμογή των opacity με βάση το νέο ασφαλές accent */
   --accent-bg-subtle: rgba(0, 122, 153, 0.08);
   --accent-bg-hover: rgba(0, 122, 153, 0.18);
 
