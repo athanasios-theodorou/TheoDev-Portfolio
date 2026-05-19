@@ -1,0 +1,32 @@
+.scene-bg-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--bg-base);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Global Fixed Grid Pattern */
+.scene-bg-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image:
+    linear-gradient(to right, var(--primary) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--primary) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Subtle Vignette/Atmosphere Overlay */
+.scene-bg-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    var(--bg-base) 100%
+  );
+  opacity: 0.4;
+  pointer-events: none;
+}

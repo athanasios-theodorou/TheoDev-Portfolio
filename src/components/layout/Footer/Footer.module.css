@@ -2,7 +2,7 @@
   position: relative;
   border-top: 1px solid var(--action-bg-hover);
   padding: 5rem 0 2.5rem 0;
-  background-color: var(--bg-base);
+  background-color: transparent;
 }
 
 .footer-gradient-line {

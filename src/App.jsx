@@ -10,11 +10,13 @@ import { Contact } from "./components/sections/Contact/Contact.jsx";
 
 // UI
 import { ScrollProgressBar } from "./components/ui/ScrollProgressBar/ScrollProgressBar.jsx";
+import { BackgroundScene } from "./components/ui/BackgroundScene/BackgroundScene.jsx";
 import { ScrollToTopButton } from "./components/ui/ScrollToTopButton/ScrollToTopButton.jsx";
 
 export const App = () => {
   return (
     <>
+      <BackgroundScene />
       <ScrollProgressBar />
 
       <Navbar />
