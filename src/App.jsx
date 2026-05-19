@@ -9,11 +9,14 @@ import { Work } from "./components/sections/Work/Work.jsx";
 import { Contact } from "./components/sections/Contact/Contact.jsx";
 
 // UI
+import { ScrollProgressBar } from "./components/ui/ScrollProgressBar/ScrollProgressBar.jsx";
 import { ScrollToTopButton } from "./components/ui/ScrollToTopButton/ScrollToTopButton.jsx";
 
 export const App = () => {
   return (
     <>
+      <ScrollProgressBar />
+
       <Navbar />
       <main>
         <Home />
