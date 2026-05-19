@@ -77,7 +77,7 @@ export const projects = [
       "Built with React and Vite for maximum speed and efficiency, this portfolio serves as a centralized hub for my professional identity. It utilizes Framer Motion to create a deeply engaging user experience with sophisticated transitions and micro-interactions. The site meticulously organizes my project gallery, technical certifications, and tech stack, reflecting a commitment to clean code and high-end UI/UX principles.",
     tags: ["React Framework", "Framer Motion", "Vite"],
     image: "/images/theodev-portfolio.png",
-    liveUrl: "#",
+    liveUrl: "https://theo-dev-portfolio.vercel.app/",
     detailUrl: "#",
     status: "Deployed",
   },
