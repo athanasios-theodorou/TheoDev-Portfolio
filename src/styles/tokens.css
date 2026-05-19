@@ -66,3 +66,64 @@
   --status-progress: #febc2e; /* Orange for progress states */
   --status-progress-glow: rgba(254, 188, 46, 0.25);
 }
+
+[data-theme="light"] {
+  /* ── 2. BRAND COLORS ─────────────────────────────────── */
+
+  --accent: #007a99;
+
+  /* ── 3. BACKGROUNDS & SURFACES ───────────────────────── */
+  --bg-base: #f4f7fb;
+  --bg-surface: #ffffff;
+  --bg-elevated: rgba(0, 102, 255, 0.03);
+  --bg-overlay: rgba(244, 247, 251, 0.85);
+
+  /* ── 4. TYPOGRAPHY ───────────────────────────────────── */
+  --text-main: #0f172a;
+  --text-muted: rgba(15, 23, 42, 0.75);
+  --text-dim: rgba(15, 23, 42, 0.45);
+  --text-disabled: rgba(15, 23, 42, 0.3);
+
+  /* Interactive Text */
+  --text-interactive: rgba(15, 23, 42, 0.6);
+  /* Hover στο primary-dark για πιο "ζωντανό" click feeling */
+  --text-interactive-hover: var(--primary-dark);
+
+  /* ── 5. BORDERS ──────────────────────────────────────── */
+  --border-subtle: rgba(15, 23, 42, 0.06);
+  --border-muted: rgba(15, 23, 42, 0.12);
+
+  --border-primary-subtle: rgba(0, 102, 255, 0.15);
+  --border-primary-strong: rgba(0, 102, 255, 0.3);
+
+  /* ── 6. INTERACTIVE & ACTION (Buttons, Hover States) ─── */
+  --action-bg-subtle: rgba(0, 102, 255, 0.05);
+  --action-bg-base: rgba(0, 102, 255, 0.08);
+  --action-bg-hover: rgba(0, 102, 255, 0.12);
+  --action-bg-active: rgba(0, 102, 255, 0.18);
+
+  /* Προσαρμογή των opacity με βάση το νέο ασφαλές accent */
+  --accent-bg-subtle: rgba(0, 122, 153, 0.08);
+  --accent-bg-hover: rgba(0, 122, 153, 0.18);
+
+  /* ── 7. GLASS EFFECTS ────────────────────────────────── */
+  --glass-light: rgba(255, 255, 255, 0.5);
+  --glass-medium: rgba(255, 255, 255, 0.7);
+  --glass-heavy: rgba(255, 255, 255, 0.9);
+  --glass-solid: #ffffff;
+
+  /* ── 8. SHADOWS & GLOWS ──────────────────────────────── */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.08);
+
+  --glow-inner: rgba(255, 255, 255, 0.6);
+
+  /* ── 9. STATUS ───────────────────────────────────────── */
+  --status-success: #10b981;
+  --status-success-glow: rgba(16, 185, 129, 0.2);
+  --status-success-dark: #059669;
+
+  --status-progress: #f59e0b;
+  --status-progress-glow: rgba(245, 158, 11, 0.2);
+}
