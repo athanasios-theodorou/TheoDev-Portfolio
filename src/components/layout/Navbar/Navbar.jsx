@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { lenisInstance } from "../../../hooks/useLenis";
 import { motion, AnimatePresence } from "framer-motion";
 import { useActiveSection } from "../../../hooks/useActiveSection";
 
@@ -24,9 +25,13 @@ export const Navbar = () => {
 
   const handleNav = (href) => {
     setMenuOpen(false);
-    const targetSection = document.querySelector(href);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: "smooth" });
+
+    if (lenisInstance) {
+      lenisInstance.start();
+      lenisInstance.scrollTo(href); // Scroll lenis
+    } else {
+      // Fallback
+      document.querySelector(href)?.scrollIntoView();
     }
   };
 
@@ -47,8 +52,15 @@ export const Navbar = () => {
 
   // lock body scroll on mobile menu
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "unset";
-    return () => (document.body.style.overflow = "unset");
+    if (!lenisInstance) return;
+
+    if (menuOpen) {
+      lenisInstance.stop();
+    } else {
+      lenisInstance.start();
+    }
+
+    return () => lenisInstance.start();
   }, [menuOpen]);
 
   return (
