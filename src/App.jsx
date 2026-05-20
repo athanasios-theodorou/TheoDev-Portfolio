@@ -13,7 +13,13 @@ import { ScrollProgressBar } from "./components/ui/ScrollProgressBar/ScrollProgr
 import { BackgroundScene } from "./components/ui/BackgroundScene/BackgroundScene.jsx";
 import { ScrollToTopButton } from "./components/ui/ScrollToTopButton/ScrollToTopButton.jsx";
 
+// Hooks
+import { useLenis } from "./hooks/useLenis.js";
+
 export const App = () => {
+  // Initialize smooth scroll
+  useLenis();
+
   return (
     <>
       <BackgroundScene />
