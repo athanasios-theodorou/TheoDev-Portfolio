@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { lenisInstance } from "../../../hooks/useLenis";
+import { useSmoothScroll } from "../../../hooks/useSmoothScroll";
 import { motion, AnimatePresence } from "framer-motion";
 import { useActiveSection } from "../../../hooks/useActiveSection";
 
@@ -16,6 +17,7 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const activeSection = useActiveSection(["home", "about", "work", "contact"]);
+  const scrollTo = useSmoothScroll();
 
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
@@ -28,11 +30,9 @@ export const Navbar = () => {
 
     if (lenisInstance) {
       lenisInstance.start();
-      lenisInstance.scrollTo(href); // Scroll lenis
-    } else {
-      // Fallback
-      document.querySelector(href)?.scrollIntoView();
     }
+
+    scrollTo(href); // Scroll lenis
   };
 
   // scroll effect

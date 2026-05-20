@@ -1,4 +1,4 @@
-import { lenisInstance } from "../../../hooks/useLenis";
+import { useSmoothScroll } from "../../../hooks/useSmoothScroll";
 import { MapPin, Mail } from "lucide-react";
 import { personal, navLinks } from "../../../assets/data/portfolio";
 import { Logo } from "../../ui/Logo/Logo";
@@ -8,15 +8,11 @@ import classes from "./Footer.module.css";
 
 export const Footer = () => {
   const year = new Date().getFullYear();
+  const scrollTo = useSmoothScroll();
 
   const handleFooterNav = (e, href) => {
     e.preventDefault();
-
-    if (lenisInstance) {
-      lenisInstance.scrollTo(href);
-    } else {
-      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollTo(href);
   };
 
   return (
