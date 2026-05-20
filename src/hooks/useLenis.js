@@ -8,6 +8,14 @@ export let lenisInstance = null;
  */
 export const useLenis = () => {
   useEffect(() => {
+    // Prevent the browser from automatically restoring the previous scroll position on reload
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    // Instantly reset native window scroll to top
+    window.scrollTo(0, 0);
+
     // Initialize Lenis
     const lenis = new Lenis({
       duration: 1.5,
@@ -22,6 +30,9 @@ export const useLenis = () => {
     });
 
     lenisInstance = lenis;
+
+    // Force Lenis to snap to the top instantly without animation on initial load
+    lenis.scrollTo(0, { immediate: true });
 
     // RAF loop for smooth scrolling
     let rafId;
