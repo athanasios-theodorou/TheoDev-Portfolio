@@ -7,10 +7,24 @@
   box-sizing: border-box;
 }
 
+/* LENIS REQUIRED STYLES */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis-smooth [data-lenis-prevent] {
+  scroll-behavior: contain;
+}
+
 /* ROOT LAYOUT */
 html {
   scroll-padding-top: 80px;
-  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 body {
