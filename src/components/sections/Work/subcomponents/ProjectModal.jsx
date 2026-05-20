@@ -45,6 +45,7 @@ export const ProjectModal = ({ project, onClose }) => {
       <motion.div
         className={classes["project-modal-container"]}
         onClick={(e) => e.stopPropagation()}
+        data-lenis-prevent
       >
         <button className={classes["project-modal-close"]} onClick={onClose}>
           <X size={24} />
