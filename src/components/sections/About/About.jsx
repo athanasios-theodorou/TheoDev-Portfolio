@@ -1,3 +1,4 @@
+import { useSmoothScroll } from "../../../hooks/useSmoothScroll";
 import { motion } from "framer-motion";
 import { Download, Code2 } from "lucide-react";
 import { personal, stats } from "../../../assets/data/portfolio";
@@ -16,6 +17,13 @@ import cvFile from "../../../assets/documents/Athanasios-Theodorou-CV.pdf";
 import classes from "./About.module.css";
 
 export const About = () => {
+  const scrollTo = useSmoothScroll();
+
+  const handleAboutNav = (e, href) => {
+    e.preventDefault();
+    scrollTo(href);
+  };
+
   return (
     <section id="about" className={classes["about-section"]}>
       <motion.div className={classes["about-container"]}>
@@ -66,12 +74,7 @@ export const About = () => {
               </motion.a>
               <motion.a
                 href="#work"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document
-                    .querySelector("#work")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
+                onClick={(e) => handleAboutNav(e, "#work")}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className={classes["about-btn-secondary"]}
