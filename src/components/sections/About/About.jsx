@@ -1,4 +1,4 @@
-import { lenisInstance } from "../../../hooks/useLenis";
+import { useSmoothScroll } from "../../../hooks/useSmoothScroll";
 import { motion } from "framer-motion";
 import { Download, Code2 } from "lucide-react";
 import { personal, stats } from "../../../assets/data/portfolio";
@@ -17,15 +17,11 @@ import cvFile from "../../../assets/documents/Athanasios-Theodorou-CV.pdf";
 import classes from "./About.module.css";
 
 export const About = () => {
+  const scrollTo = useSmoothScroll();
+
   const handleAboutNav = (e, href) => {
     e.preventDefault();
-
-    if (lenisInstance) {
-      lenisInstance.scrollTo(href);
-    } else {
-      // Fallback
-      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollTo(href);
   };
 
   return (

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { lenisInstance } from "../../../hooks/useLenis";
+import { useSmoothScroll } from "../../../hooks/useSmoothScroll";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 
@@ -7,6 +7,7 @@ import classes from "./ScrollToTopButton.module.css";
 
 export const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
+  const scrollTo = useSmoothScroll();
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 400);
@@ -15,11 +16,7 @@ export const ScrollToTopButton = () => {
   }, []);
 
   const handleScrollToTop = () => {
-    if (lenisInstance) {
-      lenisInstance.scrollTo(0);
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    scrollTo(0);
   };
 
   return (
