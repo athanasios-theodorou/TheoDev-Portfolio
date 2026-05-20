@@ -1,3 +1,4 @@
+import { lenisInstance } from "../../../../hooks/useLenis";
 import { Code2, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import {
@@ -12,6 +13,17 @@ import { TypeWriter } from "./TypeWriter.jsx";
 import classes from "./HomeContent.module.css";
 
 export const HomeContent = ({ shouldAnimate }) => {
+  const handleHeroNav = (e, href) => {
+    e.preventDefault();
+
+    if (lenisInstance) {
+      lenisInstance.scrollTo(href); // Smooth μέσω Lenis
+    } else {
+      // Fallback
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <motion.div
       initial="hidden"
@@ -51,12 +63,7 @@ export const HomeContent = ({ shouldAnimate }) => {
       <motion.div variants={slowFadeUp} className={classes["home-actions"]}>
         <motion.a
           href="#work"
-          onClick={(e) => {
-            e.preventDefault();
-            document
-              .querySelector("#work")
-              ?.scrollIntoView({ behavior: "smooth" });
-          }}
+          onClick={(e) => handleHeroNav(e, "#work")}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className={classes["home-btn-primary"]}
@@ -65,12 +72,7 @@ export const HomeContent = ({ shouldAnimate }) => {
         </motion.a>
         <motion.a
           href="#contact"
-          onClick={(e) => {
-            e.preventDefault();
-            document
-              .querySelector("#contact")
-              ?.scrollIntoView({ behavior: "smooth" });
-          }}
+          onClick={(e) => handleHeroNav(e, "#contact")}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className={classes["home-btn-secondary"]}

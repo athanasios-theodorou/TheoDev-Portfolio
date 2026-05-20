@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { lenisInstance } from "../../../hooks/useLenis";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 
@@ -13,6 +14,14 @@ export const ScrollToTopButton = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleScrollToTop = () => {
+    if (lenisInstance) {
+      lenisInstance.scrollTo(0);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <AnimatePresence>
       {visible && (
@@ -22,7 +31,7 @@ export const ScrollToTopButton = () => {
           exit={{ opacity: 0, scale: 0.8, y: 10 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={handleScrollToTop}
           className={classes["scroll-to-top-btn"]}
           aria-label="Scroll to top"
         >
