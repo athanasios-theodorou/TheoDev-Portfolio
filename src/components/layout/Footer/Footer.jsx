@@ -1,3 +1,4 @@
+import { lenisInstance } from "../../../hooks/useLenis";
 import { MapPin, Mail } from "lucide-react";
 import { personal, navLinks } from "../../../assets/data/portfolio";
 import { Logo } from "../../ui/Logo/Logo";
@@ -7,6 +8,16 @@ import classes from "./Footer.module.css";
 
 export const Footer = () => {
   const year = new Date().getFullYear();
+
+  const handleFooterNav = (e, href) => {
+    e.preventDefault();
+
+    if (lenisInstance) {
+      lenisInstance.scrollTo(href);
+    } else {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <footer className={classes["footer"]}>
@@ -40,12 +51,7 @@ export const Footer = () => {
                 <a
                   key={label}
                   href={href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .querySelector(href)
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
+                  onClick={(e) => handleFooterNav(e, href)}
                   className={classes["footer-nav-link"]}
                 >
                   {label}
