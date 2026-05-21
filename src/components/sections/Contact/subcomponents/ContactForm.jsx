@@ -1,5 +1,11 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  AnimatePresence,
+} from "framer-motion";
 import {
   slideInRight,
   staggerContainer,
@@ -24,7 +30,7 @@ export const ContactForm = () => {
     damping: 20,
   });
 
-  const { form, status, handleChange, handleSubmit } = useContactForm();
+  const { form, errors, status, handleChange, handleSubmit } = useContactForm();
 
   const getButtonStateClass = () => {
     if (status === "sending") return classes["contact-submit-btn--sending"];
@@ -36,7 +42,7 @@ export const ContactForm = () => {
     if (status === "sending") {
       return (
         <>
-          <Loader2 size={16} /> Sending...
+          <Loader2 size={16} className={classes["spinner"]} /> Sending...
         </>
       );
     }
@@ -73,6 +79,7 @@ export const ContactForm = () => {
         viewport={{ once: false }}
         className={classes["contact-form"]}
         onSubmit={handleSubmit}
+        noValidate
       >
         {/* Honeypot (anti-bot hidden field) */}
         <input
@@ -93,14 +100,26 @@ export const ContactForm = () => {
         >
           <label className={classes["contact-input-label"]}>Full Name</label>
           <input
-            className={classes["contact-input"]}
+            className={`${classes["contact-input"]} ${errors.name ? classes["contact-input--error"] : ""}`}
             type="text"
             name="name"
             placeholder="Enter your name"
             value={form.name}
             onChange={handleChange}
-            required
           />
+          {/* Error Handling */}
+          <AnimatePresence>
+            {errors.name && (
+              <motion.span
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                className={classes["error-text"]}
+              >
+                {errors.name}
+              </motion.span>
+            )}
+          </AnimatePresence>
         </motion.div>
 
         {/* Email */}
@@ -111,14 +130,25 @@ export const ContactForm = () => {
         >
           <label className={classes["contact-input-label"]}>Email</label>
           <input
-            className={classes["contact-input"]}
+            className={`${classes["contact-input"]} ${errors.email ? classes["contact-input--error"] : ""}`}
             type="email"
             name="email"
             placeholder="Example@gmail.com"
             value={form.email}
             onChange={handleChange}
-            required
           />
+          <AnimatePresence>
+            {errors.email && (
+              <motion.span
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                className={classes["error-text"]}
+              >
+                {errors.email}
+              </motion.span>
+            )}
+          </AnimatePresence>
         </motion.div>
 
         {/* Subject */}
@@ -129,14 +159,25 @@ export const ContactForm = () => {
         >
           <label className={classes["contact-input-label"]}>Subject</label>
           <input
-            className={classes["contact-input"]}
+            className={`${classes["contact-input"]} ${errors.subject ? classes["contact-input--error"] : ""}`}
             type="text"
             name="subject"
             placeholder="Project inquiry"
             value={form.subject}
             onChange={handleChange}
-            required
           />
+          <AnimatePresence>
+            {errors.subject && (
+              <motion.span
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                className={classes["error-text"]}
+              >
+                {errors.subject}
+              </motion.span>
+            )}
+          </AnimatePresence>
         </motion.div>
 
         {/* Message */}
@@ -147,15 +188,24 @@ export const ContactForm = () => {
         >
           <label className={classes["contact-input-label"]}>Message</label>
           <textarea
-            className={
-              classes["contact-input"] + " " + classes["contact-textarea"]
-            }
+            className={`${classes["contact-input"]} ${classes["contact-textarea"]} ${errors.message ? classes["contact-input--error"] : ""}`}
             name="message"
             placeholder="Tell me about your project, idea or question..."
             value={form.message}
             onChange={handleChange}
-            required
           />
+          <AnimatePresence>
+            {errors.message && (
+              <motion.span
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                className={classes["error-text"]}
+              >
+                {errors.message}
+              </motion.span>
+            )}
+          </AnimatePresence>
         </motion.div>
 
         {/* Submit Button */}

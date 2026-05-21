@@ -30,7 +30,7 @@ export const Logo = ({ onNavigate, isStatic = false }) => {
     >
       <div className={classes["navbar-logo-icon"]}>
         <img
-          src="/images/LogoTheoDev.png"
+          src="/images/LogoTheoDev.webp"
           alt="TheoDev Logo"
           className={classes["navbar-logo-img"]}
         />

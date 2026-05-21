@@ -63,7 +63,7 @@ export const projects = [
     extendedDescription:
       "Engineered to optimize academic workflows, this system reduces manual coordination in thesis submissions, assignments, and tracking. It features a responsive React UI with advanced state management, powered by a PHP (Slim) backend with over 70 RESTful API endpoints, a normalized MySQL database, and secure Role-Based Access Control (RBAC) using JWT.",
     tags: ["React Framework", "PHP/Slim", "MySQL"],
-    image: "/images/thesis-gate.png",
+    image: "/images/thesis-gate.webp",
     liveUrl: "#",
     detailUrl: "#",
     status: "Developing",
@@ -76,8 +76,8 @@ export const projects = [
     extendedDescription:
       "Built with React and Vite for maximum speed and efficiency, this portfolio serves as a centralized hub for my professional identity. It utilizes Framer Motion to create a deeply engaging user experience with sophisticated transitions and micro-interactions. The site meticulously organizes my project gallery, technical certifications, and tech stack, reflecting a commitment to clean code and high-end UI/UX principles.",
     tags: ["React Framework", "Framer Motion", "Vite"],
-    image: "/images/theodev-portfolio.png",
-    liveUrl: "#",
+    image: "/images/theodev-portfolio.webp",
+    liveUrl: "https://theo-dev-portfolio.vercel.app/",
     detailUrl: "#",
     status: "Deployed",
   },
@@ -89,7 +89,7 @@ export const projects = [
     extendedDescription:
       "Built with vanilla JavaScript (ES6+) and the Fetch API, this application efficiently processes complex XML and JSON data structures into dynamic data tables. It offers a highly interactive experience, allowing users to search records by brand or fuel type, filter by 24-hour availability, and sort stations based on real-time pricing or proximity.",
     tags: ["JSON/XML", "Data Visualization", "JavaScript"],
-    image: "/images/fuel-stations-data-viewer.png",
+    image: "/images/fuel-stations-data-viewer.webp",
     liveUrl: "https://fuel-stations-data-viewer.vercel.app/",
     detailUrl: "#",
     status: "Deployed",
@@ -102,7 +102,7 @@ export const projects = [
     extendedDescription:
       "WebVillas is a robust property management application that simplifies the listing process for real estate owners. It features a complete CRUD system for villas, secure user authentication, and multi-image upload capabilities. By integrating the Google Maps API, it provides users with precise geographical context for each property, all presented through a fully responsive and clean interface.",
     tags: ["PHP", "MySQL", "Google Maps"],
-    image: "/images/web-villas.png",
+    image: "/images/web-villas.webp",
     liveUrl: "#",
     detailUrl: "#",
     status: "Developing",
@@ -115,7 +115,7 @@ export const projects = [
     extendedDescription:
       "This project goes beyond a simple game by implementing advanced React patterns. It features dynamic player name customization, a robust win/draw detection algorithm, and a move history tracking system. Developed using React Hooks for efficient state management, it demonstrates how to handle complex UI synchronization and conditional rendering in a minimalist, responsive environment.",
     tags: ["React Framework", "Game Logic", "Hooks"],
-    image: "/images/tic-tac-toe.png",
+    image: "/images/tic-tac-toe.webp",
     liveUrl: "https://tic-tac-toe-by-theod.vercel.app/",
     detailUrl: "#",
     status: "Deployed",
@@ -128,7 +128,7 @@ export const projects = [
     extendedDescription:
       "This project serves as a comprehensive digital hub for sports teams and their fanbases. Built with a focus on semantic HTML5 and modern CSS3, it features a modular multi-page architecture including dedicated sections for team history, real-time news updates, and an interactive media gallery. The responsive design ensures that fans can stay connected with their favorite team across any device or screen size.",
     tags: ["HTML5/CSS3", "Responsive Design", "UI/UX"],
-    image: "/images/sports-team-portal.png",
+    image: "/images/sports-team-portal.webp",
     liveUrl: "https://sports-team-website.vercel.app/",
     detailUrl: "#",
     status: "Deployed",

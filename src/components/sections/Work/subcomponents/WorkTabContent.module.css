@@ -1,7 +1,7 @@
 /* Projects-Certs-Techs */
 .work-projects-grid,
 .work-certs-grid,
-.work-tech-grid {
+.work-tech-grid-elite {
   perspective: 2000px;
   transform-style: preserve-3d;
 }
