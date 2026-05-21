@@ -78,3 +78,15 @@
     height: 12px;
   }
 }
+
+@media (max-width: 410px) {
+  .work-tab-btn-elite {
+    padding: 0.6rem 0.65rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+  }
+
+  .work-tab-label-elite {
+    gap: 0.35rem;
+  }
+}
