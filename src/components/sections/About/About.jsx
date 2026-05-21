@@ -11,7 +11,7 @@ import {
 import { StatCard } from "./subcomponents/StatCard";
 import { SectionTitle } from "../../ui/SectionTitle/SectionTitle.jsx";
 
-import portfolioImage from "../../../assets/images/portfolio.jpg";
+import portfolioImage from "../../../assets/images/portfolio.webp";
 import cvFile from "../../../assets/documents/Athanasios-Theodorou-CV.pdf";
 
 import classes from "./About.module.css";
