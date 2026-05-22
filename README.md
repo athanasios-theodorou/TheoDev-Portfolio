@@ -1,35 +1,29 @@
 # TheoDev Portfolio
 
-A production-ready, highly optimized personal portfolio website designed to showcase professional experience, technical skills, and software engineering projects. Built with modern frontend tooling, focusing on performance, fluid user experience, and clean code architecture.
+A production-ready, highly optimized personal portfolio built with React 19 and Vite 8, focusing on performance, clean architecture, and premium user experience.
 
 [![Visit Portfolio](https://img.shields.io/badge/Visit%20Portfolio-0070f3?style=for-the-badge)](https://theo-dev-portfolio.vercel.app/)
 
-## 🛠️ Tech Stack & Architecture
+## 🛠️ Tech Stack
 
-* **Framework:** React 19 (Functional Components, Hooks)
-* **Build Tool:** Vite 8 (Lightning-fast bundling and HMR)
-* **Styling & UI:** Custom CSS / CSS Modules & React Icons / Lucide React
-* **Animations & Scrolling:** Framer Motion (Fluid transitions) & Lenis (Smooth scroll management)
-* **Deployment:** Vercel (CI/CD automated pipelines)
+* **Core:** React 19 & Vite 8
+* **Styling:** Custom CSS / CSS Modules & Lucide / React Icons
+* **UX & Motion:** Framer Motion & Lenis Smooth Scroll
+* **Deployment:** Vercel (Automated CI/CD pipelines)
 
-### Architecture Highlights
-* **Component-Driven Design:** Highly reusable, modular component structure with custom hooks (`useContactForm`) for clean separation of concerns.
-* **Optimized Asset Delivery:** Production-ready asset optimization, asset minification, and modern vector graphics (SVG) for minimal First Contentful Paint (FCP).
-* **State Management:** Clean and predictable local state management for interactive elements and forms.
+## ✨ Features
 
-## ✨ Key Features
+* 📱 **Fully Responsive:** Flawless layout across all screen sizes.
+* 🎭 **Premium UX:** Fluid animations and smooth scrolling tracking visual hierarchy.
+* 📂 **Showcase:** Organized project presentation with direct demo & repo links.
+* 📄 **CV View:** Instant, in-browser resume viewing in a new tab.
+* ✉️ **Secure Form:** Custom hook (`useContactForm`) with client validation & anti-bot checks (honeypot/speed timer).
 
-* 📱 **Fully Responsive Layout:** Flawless UX across mobile, tablet, and ultra-wide desktop screens.
-* 🎭 **Fluid UX Animations:** Purposeful, non-intrusive micro-interactions and transitions enhancing visual hierarchy.
-* 📂 **Dynamic Project Showcase:** Categorized presentation of engineering projects with direct links to live demos and repositories.
-* 📄 **CV Integration:** Instant, in-browser resume/CV viewing in a new tab with an optimized asset distribution setup.
-* ✉️ **Integrated Contact Form:** Fully validated user input form with asynchronous email delivery integration.
+## 📈 Performance
 
-## 📈 Performance & Optimization
-
-Built with software engineering best practices in mind, achieving near-perfect scores on core web vitals:
-* **Modern Formats:** Utilizing Next-Gen image formats and SVG vector graphics where applicable.
-* **Clean Bundle:** Zero unused dependencies to maintain a lightweight bundle size.
+* **Core Web Vitals:** Built with modern software engineering standards, targeting optimal loading speed and responsiveness.
+* **Optimized Assets:** Production-ready minification and vector graphics (SVG) for fast FCP.
+* **Clean Code:** Zero unused dependencies for minimal bundle size.
 
 ## ⚙️ Installation & Setup
 
